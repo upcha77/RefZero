@@ -24,7 +24,7 @@ namespace RefZero.CLI
                     return 1;
                 }
 
-                Console.WriteLine($"Using MSBuild at: {instance.MSBuildPath}");
+                // Console.WriteLine($"Using MSBuild at: {instance.MSBuildPath}");
                 MSBuildLocator.RegisterInstance(instance);
             }
             catch (Exception ex)
@@ -102,7 +102,83 @@ namespace RefZero.CLI
 
             rootCommand.AddCommand(removeCommand);
 
+            var diagnosticsCommand = new Command("diagnostics", "Run system diagnostics to debug reference issues.");
+            diagnosticsCommand.AddOption(projectOption);
+
+            diagnosticsCommand.SetHandler((FileInfo projectFile) =>
+            {
+                RunDiagnostics(projectFile);
+            }, projectOption);
+
+            rootCommand.AddCommand(diagnosticsCommand);
+
             return rootCommand.Invoke(args);
+        }
+
+        static void RunDiagnostics(FileInfo projectFile)
+        {
+            Console.WriteLine("=== RefZero Diagnostics Mode ===");
+            Console.WriteLine($"Time: {DateTime.Now}");
+            Console.WriteLine($"OS: {Environment.OSVersion}");
+            Console.WriteLine($"CLI Path: {AppDomain.CurrentDomain.BaseDirectory}");
+            
+            // 1. MSBuild Info
+            try
+            {
+                var instances = MSBuildLocator.QueryVisualStudioInstances().OrderByDescending(i => i.Version);
+                Console.WriteLine($"\n[MSBuild Instances Found: {instances.Count()}]");
+                foreach (var inst in instances)
+                {
+                    Console.WriteLine($"- Version: {inst.Version}");
+                    Console.WriteLine($"  Path: {inst.MSBuildPath}");
+                    Console.WriteLine($"  SDK: {inst.DiscoveryType}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error querying MSBuild: {ex.Message}");
+            }
+
+            // 2. Project Analysis (Verbose)
+            if (projectFile.Exists)
+            {
+                Console.WriteLine($"\n[Analyzing Project: {projectFile.Name}]");
+                try
+                {
+                    var analyzer = new DependencyAnalyzer();
+                    var projectInfo = analyzer.Analyze(projectFile.FullName);
+                    
+                    int count = projectInfo.References.Count();
+                    Console.WriteLine($"Reference Count: {count}");
+                    
+                    if (count == 0)
+                    {
+                        Console.WriteLine("WARNING: 0 references found. Possible causes:");
+                        Console.WriteLine("- Project not restored (try 'dotnet restore').");
+                        Console.WriteLine("- Target framework not installed on this machine.");
+                        Console.WriteLine("- MSBuild failed to resolve references silently.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("First 5 references detected:");
+                        foreach(var r in projectInfo.References.Take(5))
+                        {
+                            Console.WriteLine($"- {r.Name} ({r.SourceType})");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"CRITICAL ERROR during analysis:");
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+            else
+            {
+                 Console.WriteLine($"\nProject file not found: {projectFile.FullName}");
+            }
+
+            Console.WriteLine("\n=== End Diagnostics ===");
         }
 
         static void RemoveSpecificReferences(FileInfo projectFile, string[] references)

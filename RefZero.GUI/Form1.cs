@@ -58,6 +58,43 @@ namespace RefZero.GUI
             }
         }
 
+        private void btnDiagnostics_Click(object sender, EventArgs e)
+        {
+            string projectPath = txtProjectPath.Text;
+
+            // Allow empty path for diagnostics (it might checking general environment)
+            // But CLI expects -p, so maybe we should enforce it or pass dummy?
+            // Let's enforce it for now as per CLI requirement.
+            if (string.IsNullOrEmpty(projectPath))
+            {
+                 rtbLog.AppendText("Running diagnostics without project file...\n");
+                 // If CLI supported no-project diagnostics, we would call it. 
+                 // Current CLI requires -p. Let's just ask user to pick one or just run on current dir if possible?
+                 // For now, let's just warn.
+                 MessageBox.Show("Please select a project file to analyze.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 return;
+            }
+
+            rtbLog.AppendText($"\nTODO: Running Diagnostics on {Path.GetFileName(projectPath)}...\n");
+            rtbLog.AppendText("=============================================\n");
+            
+            try
+            {
+                // Force UI repainting
+                Application.DoEvents(); 
+
+                var result = CliWrapper.TryRunDiagnostics(projectPath);
+                rtbLog.AppendText(result);
+            }
+            catch (Exception ex)
+            {
+                rtbLog.AppendText($"Diagnostics failed validation: {ex.Message}\n");
+            }
+
+            rtbLog.AppendText("\n=============================================\n");
+            rtbLog.ScrollToCaret();
+        }
+
         private void btnBrowseOutput_Click(object sender, EventArgs e)
         {
             using (var fbd = new FolderBrowserDialog())

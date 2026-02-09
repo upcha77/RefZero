@@ -164,6 +164,18 @@ namespace RefZero.GUI
             this.btnAnalyzeOnly.Click += new System.EventHandler(this.btnAnalyzeOnly_Click);
 
             // 
+            // btnDiagnostics (New)
+            // 
+            this.btnDiagnostics.Location = new System.Drawing.Point(420, 50); // Adjust position as needed
+            this.btnDiagnostics.Name = "btnDiagnostics";
+            this.btnDiagnostics.Size = new System.Drawing.Size(100, 30);
+            this.btnDiagnostics.TabIndex = 7;
+            this.btnDiagnostics.Text = "Run Diagnostics";
+            this.btnDiagnostics.UseVisualStyleBackColor = true;
+            this.btnDiagnostics.Click += new System.EventHandler(this.btnDiagnostics_Click);
+            this.tabAggregator.Controls.Add(this.btnDiagnostics);
+
+            // 
             // btnCollect
             // 
             this.btnCollect.Location = new System.Drawing.Point(130, 50);
@@ -299,5 +311,6 @@ namespace RefZero.GUI
         private System.Windows.Forms.CheckedListBox clbUnusedRefs;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnDiagnostics;
     }
 }

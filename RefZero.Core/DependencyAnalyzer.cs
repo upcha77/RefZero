@@ -51,7 +51,7 @@ namespace RefZero.Core
                 throw new FileNotFoundException("Project file not found.", projectPath);
 
             var project = _projectCollection.LoadProject(projectPath);
-            Console.WriteLine($"Analyzing: {Path.GetFileName(projectPath)}");
+            // Console.WriteLine($"Analyzing: {Path.GetFileName(projectPath)}");
 
             var references = ResolveReferences(project);
 

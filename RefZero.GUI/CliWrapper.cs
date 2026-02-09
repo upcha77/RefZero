@@ -93,6 +93,19 @@ namespace RefZero.GUI
             // Output is log
         }
 
+        public static string TryRunDiagnostics(string projectPath)
+        {
+            try
+            {
+                string cliPath = GetCliPath();
+                return RunProcess(cliPath, $"diagnostics -p \"{projectPath}\"");
+            }
+            catch (Exception ex)
+            {
+                return $"Diagnostics execution failed: {ex.Message}";
+            }
+        }
+
         private static string RunProcess(string exePath, string arguments)
         {
             var psi = new ProcessStartInfo
