@@ -6,8 +6,8 @@ C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.AssemblyInfoInputs.cache
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.AssemblyInfo.cs
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.csproj.CoreCompileInputs.cache
+C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.sourcelink.json
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\refint\RefZero.Core.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.pdb
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\ref\RefZero.Core.dll
-C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.sourcelink.json

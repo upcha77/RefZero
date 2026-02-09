@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using RefZero.Core;
 
 namespace RefZero.GUI
 {
@@ -18,11 +18,10 @@ namespace RefZero.GUI
         {
             using (var ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Project Files (*.csproj)|*.csproj|All Files (*.*)|*.*";
+                ofd.Filter = "Project Files (*.csproj)|*.csproj";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     txtProjectPath.Text = ofd.FileName;
-                    lblStatus.Text = $"Loaded: {Path.GetFileName(ofd.FileName)}";
                 }
             }
         }
@@ -41,14 +40,13 @@ namespace RefZero.GUI
             
             try
             {
-                var analyzer = new DependencyAnalyzer();
-                var projectInfo = analyzer.Analyze(projectPath);
+                var references = CliWrapper.Analyze(projectPath);
                 
-                rtbLog.AppendText($"Found {projectInfo.References.Count()} references.\n");
+                rtbLog.AppendText($"Found {references.Count} references.\n");
                 
-                foreach(var refItem in projectInfo.References)
+                foreach(var refItem in references)
                 {
-                    rtbLog.AppendText($"[REF] {refItem.Name} ({refItem.Version}) -> {refItem.PhysicalPath}\n");
+                    rtbLog.AppendText($"[REF] {refItem.Name} ({refItem.Version}) -> {refItem.PhysicalPath} [{refItem.SourceType}]\n");
                 }
                 
                 rtbLog.AppendText("Analysis completed.\n");
@@ -92,17 +90,8 @@ namespace RefZero.GUI
             
             try
             {
-                var analyzer = new DependencyAnalyzer();
-                var projectInfo = analyzer.Analyze(projectPath);
-                
-                rtbLog.AppendText($"Found {projectInfo.References.Count()} references.\n");
-
-                var copier = new ReferenceCopier();
-                // Redirect console output to RichTextBox (Simplified: ReferenceCopier logs to Console currently)
-                // Ideally, we should pass a logger or event, but for now capturing Console is hard in WinForms in-proc.
-                // We will just run it.
-                
-                copier.CopyReferences(projectInfo.References, outputPath);
+                // CliWrapper.Collect executes the CLI 'collect' command
+                CliWrapper.Collect(projectPath, outputPath);
                 
                 rtbLog.AppendText("Collection completed successfully.\n");
                 MessageBox.Show("Collection completed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,7 +114,7 @@ namespace RefZero.GUI
             
             try
             {
-                System.Diagnostics.Process.Start("explorer.exe", outputPath);
+                Process.Start("explorer.exe", outputPath);
             }
             catch (Exception ex)
             {
@@ -136,41 +125,38 @@ namespace RefZero.GUI
         private void btnAnalyze_Click(object sender, EventArgs e)
         {
             string projectPath = txtProjectPath.Text;
+
             if (string.IsNullOrEmpty(projectPath) || !File.Exists(projectPath))
             {
                 MessageBox.Show("Please select a valid project file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            clbUnusedRefs.Items.Clear();
             lblStatus.Text = "Analyzing unused references...";
-            Application.DoEvents();
+            clbUnusedRefs.Items.Clear();
 
             try
             {
-                var analyzer = new DependencyAnalyzer();
-                var projectInfo = analyzer.Analyze(projectPath);
-                var cleaner = new ReferenceCleaner();
-                var unusedRefs = cleaner.AnalyzeUnusedReferences(projectPath, projectInfo.References);
+                var unusedRefs = CliWrapper.RunCleanAnalysis(projectPath);
 
-                if (!unusedRefs.Any())
+                if (unusedRefs.Count == 0)
                 {
-                    lblStatus.Text = "No unused references found.";
                     MessageBox.Show("No unused references found.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblStatus.Text = "No unused references found.";
                 }
                 else
                 {
-                    foreach (var refName in unusedRefs)
+                    foreach (var item in unusedRefs)
                     {
-                        clbUnusedRefs.Items.Add(refName, true); // Default checked
+                        clbUnusedRefs.Items.Add(item, true); // Default checked
                     }
-                    lblStatus.Text = $"Found {unusedRefs.Count()} unused references.";
+                    lblStatus.Text = $"Found {unusedRefs.Count} unused references.";
                 }
             }
             catch (Exception ex)
             {
-                lblStatus.Text = "Analysis failed.";
                 MessageBox.Show($"Analysis failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblStatus.Text = "Analysis failed.";
             }
         }
 
@@ -200,15 +186,19 @@ namespace RefZero.GUI
                 try
                 {
                     var refsToRemove = clbUnusedRefs.CheckedItems.Cast<string>().ToList();
-                    var cleaner = new ReferenceCleaner();
-                    cleaner.RemoveReferences(projectPath, refsToRemove);
+                    
+                    CliWrapper.RemoveReferences(projectPath, refsToRemove);
 
                     MessageBox.Show("Selected references have been removed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     // Refresh GUI
-                    foreach (var item in refsToRemove)
+                    // We remove items from the list box that were checked and successfully removed
+                    for (int i = clbUnusedRefs.Items.Count - 1; i >= 0; i--)
                     {
-                        clbUnusedRefs.Items.Remove(item);
+                        if (clbUnusedRefs.GetItemChecked(i))
+                        {
+                            clbUnusedRefs.Items.RemoveAt(i);
+                        }
                     }
                     lblStatus.Text = "Removal completed.";
                 }

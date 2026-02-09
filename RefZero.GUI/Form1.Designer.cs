@@ -69,6 +69,8 @@ namespace RefZero.GUI
             // 
             // txtProjectPath
             // 
+            this.txtProjectPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProjectPath.Location = new System.Drawing.Point(70, 12);
             this.txtProjectPath.Name = "txtProjectPath";
             this.txtProjectPath.Size = new System.Drawing.Size(400, 23);
@@ -77,6 +79,7 @@ namespace RefZero.GUI
             // 
             // btnBrowseProject
             // 
+            this.btnBrowseProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowseProject.Location = new System.Drawing.Point(480, 11);
             this.btnBrowseProject.Name = "btnBrowseProject";
             this.btnBrowseProject.Size = new System.Drawing.Size(75, 25);
@@ -88,6 +91,9 @@ namespace RefZero.GUI
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabAggregator);
             this.tabControl1.Controls.Add(this.tabCleaner);
             this.tabControl1.Location = new System.Drawing.Point(12, 50);
@@ -127,6 +133,8 @@ namespace RefZero.GUI
             // 
             // txtOutputPath
             // 
+            this.txtOutputPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOutputPath.Location = new System.Drawing.Point(70, 17);
             this.txtOutputPath.Name = "txtOutputPath";
             this.txtOutputPath.Size = new System.Drawing.Size(350, 23);
@@ -135,6 +143,7 @@ namespace RefZero.GUI
             // 
             // btnBrowseOutput
             // 
+            this.btnBrowseOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowseOutput.Location = new System.Drawing.Point(430, 16);
             this.btnBrowseOutput.Name = "btnBrowseOutput";
             this.btnBrowseOutput.Size = new System.Drawing.Size(75, 25);
@@ -144,7 +153,7 @@ namespace RefZero.GUI
             this.btnBrowseOutput.Click += new System.EventHandler(this.btnBrowseOutput_Click);
 
             // 
-            // btnAnalyzeOnly (New)
+            // btnAnalyzeOnly
             // 
             this.btnAnalyzeOnly.Location = new System.Drawing.Point(18, 50);
             this.btnAnalyzeOnly.Name = "btnAnalyzeOnly";
@@ -179,6 +188,9 @@ namespace RefZero.GUI
             // 
             // rtbLog
             // 
+            this.rtbLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbLog.Location = new System.Drawing.Point(18, 90);
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.Size = new System.Drawing.Size(515, 170);
@@ -214,6 +226,9 @@ namespace RefZero.GUI
             // 
             // clbUnusedRefs
             // 
+            this.clbUnusedRefs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.clbUnusedRefs.FormattingEnabled = true;
             this.clbUnusedRefs.Location = new System.Drawing.Point(15, 60);
             this.clbUnusedRefs.Name = "clbUnusedRefs";
@@ -223,6 +238,7 @@ namespace RefZero.GUI
             // 
             // btnRemove
             // 
+            this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemove.Location = new System.Drawing.Point(385, 235);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(150, 30);
@@ -234,6 +250,7 @@ namespace RefZero.GUI
             // 
             // lblStatus
             // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblStatus.AutoSize = true;
             this.lblStatus.Location = new System.Drawing.Point(15, 243);
             this.lblStatus.Name = "lblStatus";

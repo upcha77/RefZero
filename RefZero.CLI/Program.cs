@@ -62,19 +62,91 @@ namespace RefZero.CLI
 
             rootCommand.AddCommand(collectCommand);
 
+            var analyzeCommand = new Command("analyze", "Analyze project references and output to JSON.");
+            analyzeCommand.AddOption(projectOption);
+            
+            analyzeCommand.SetHandler((FileInfo projectFile) =>
+            {
+                AnalyzeReferences(projectFile);
+            }, projectOption);
+
+            rootCommand.AddCommand(analyzeCommand);
+
             var cleanCommand = new Command("clean", "Identify and optionally remove unused references from a project.");
             cleanCommand.AddOption(projectOption);
             var dryRunOption = new Option<bool>("--dry-run", "Simulate the cleaning process without modifying files.");
             cleanCommand.AddOption(dryRunOption);
+            var jsonOption = new Option<bool>("--json", "Output results in JSON format.");
+            cleanCommand.AddOption(jsonOption);
 
-            cleanCommand.SetHandler((FileInfo projectFile, bool dryRun) =>
+            cleanCommand.SetHandler((FileInfo projectFile, bool dryRun, bool json) =>
             {
-                CleanReferences(projectFile, dryRun);
-            }, projectOption, dryRunOption);
+                CleanReferences(projectFile, dryRun, json);
+            }, projectOption, dryRunOption, jsonOption);
 
             rootCommand.AddCommand(cleanCommand);
 
+            var removeCommand = new Command("remove", "Remove specific references from a project.");
+            removeCommand.AddOption(projectOption);
+            var refsOption = new Option<string[]>(
+                name: "--references",
+                description: "The list of references to remove.")
+            { IsRequired = true, AllowMultipleArgumentsPerToken = true };
+            refsOption.AddAlias("-r");
+            removeCommand.AddOption(refsOption);
+
+            removeCommand.SetHandler((FileInfo projectFile, string[] references) =>
+            {
+                RemoveSpecificReferences(projectFile, references);
+            }, projectOption, refsOption);
+
+            rootCommand.AddCommand(removeCommand);
+
             return rootCommand.Invoke(args);
+        }
+
+        static void RemoveSpecificReferences(FileInfo projectFile, string[] references)
+        {
+            if (!projectFile.Exists)
+            {
+                Console.WriteLine($"Error: Project file '{projectFile.FullName}' does not exist.");
+                return;
+            }
+
+            try
+            {
+                Console.WriteLine($"Removing {references.Length} references from {projectFile.Name}...");
+                var cleaner = new ReferenceCleaner();
+                cleaner.RemoveReferences(projectFile.FullName, references);
+                Console.WriteLine("Removal completed.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error removing references: {ex.Message}");
+            }
+        }
+
+        static void AnalyzeReferences(FileInfo projectFile)
+        {
+            if (!projectFile.Exists)
+            {
+                Console.WriteLine($"Error: Project file '{projectFile.FullName}' does not exist.");
+                return;
+            }
+
+            try
+            {
+                var analyzer = new DependencyAnalyzer();
+                var projectInfo = analyzer.Analyze(projectFile.FullName);
+                
+                var options = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
+                string json = System.Text.Json.JsonSerializer.Serialize(projectInfo.References, options);
+                Console.WriteLine(json);
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error: {ex.Message}");
+            }
         }
 
         static void CollectReferences(FileInfo projectFile, DirectoryInfo outputDir)
@@ -87,16 +159,16 @@ namespace RefZero.CLI
 
             try
             {
-                Console.WriteLine($"Starting collection for: {projectFile.Name}");
+                // Console.WriteLine($"Starting collection for: {projectFile.Name}"); // Suppress for cleaner output if needed, or keep.
 
                 var analyzer = new DependencyAnalyzer();
                 var projectInfo = analyzer.Analyze(projectFile.FullName);
-
-                Console.WriteLine($"Found {projectInfo.References.Count()} references.");
+                
+                // Console.WriteLine($"Found {projectInfo.References.Count()} references.");
 
                 var copier = new ReferenceCopier();
                 copier.CopyReferences(projectInfo.References, outputDir.FullName);
-
+                
                 Console.WriteLine("Collection completed successfully.");
             }
             catch (Exception ex)
@@ -106,7 +178,7 @@ namespace RefZero.CLI
             }
         }
 
-        static void CleanReferences(FileInfo projectFile, bool dryRun)
+        static void CleanReferences(FileInfo projectFile, bool dryRun, bool json)
         {
             if (!projectFile.Exists)
             {
@@ -116,17 +188,24 @@ namespace RefZero.CLI
 
             try
             {
-                Console.WriteLine($"Starting cleanup analysis for: {projectFile.Name}");
+                if (!json) Console.WriteLine($"Starting cleanup analysis for: {projectFile.Name}");
 
                 var analyzer = new DependencyAnalyzer();
                 var projectInfo = analyzer.Analyze(projectFile.FullName);
                 var allRefs = projectInfo.References;
 
-                Console.WriteLine($"Total References: {allRefs.Count()}");
+                if (!json) Console.WriteLine($"Total References: {allRefs.Count()}");
 
                 var cleaner = new ReferenceCleaner();
                 // We pass the project path to let cleaner find source files
                 var unusedRefs = cleaner.AnalyzeUnusedReferences(projectFile.FullName, allRefs);
+
+                if (json)
+                {
+                    var options = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
+                    Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(unusedRefs, options));
+                    return;
+                }
 
                 Console.WriteLine($"\n--- Unused References Analysis ---");
                 if (!unusedRefs.Any())

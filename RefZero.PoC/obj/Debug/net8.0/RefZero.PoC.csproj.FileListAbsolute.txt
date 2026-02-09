@@ -12,10 +12,10 @@ C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.AssemblyInfoInputs.cache
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.AssemblyInfo.cs
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.csproj.CoreCompileInputs.cache
+C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.sourcelink.json
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero..115FE0AA.Up2Date
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\refint\RefZero.PoC.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.pdb
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.genruntimeconfig.cache
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\ref\RefZero.PoC.dll
-C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.sourcelink.json

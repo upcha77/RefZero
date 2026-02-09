@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6UpGSWouE+g=",
+  "dgSpecHash": "bb2qcA5wmq0=",
   "success": true,
   "projectFilePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.CLI\\RefZero.CLI.csproj",
   "expectedPackageFiles": [
@@ -28,5 +28,18 @@
     "C:\\Users\\uprdp\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\uprdp\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "'Microsoft.Build' 17.8.3 패키지에 알려진 높음 심각도 취약성인 https://github.com/advisories/GHSA-w3q9-fxm7-j8fq이(가) 있습니다.",
+      "projectPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.CLI\\RefZero.CLI.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.CLI\\RefZero.CLI.csproj",
+      "libraryId": "Microsoft.Build",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
