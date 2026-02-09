@@ -6,14 +6,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Locator" Version="1.6.10" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
   </ItemGroup>
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
 </Project>

@@ -22,14 +22,20 @@ namespace RefZero.GUI
                 if (instance != null)
                 {
                     MSBuildLocator.RegisterInstance(instance);
+                    MessageBox.Show($"Using MSBuild: {instance.Name} - {instance.Version}\nPath: {instance.MSBuildPath}", "MSBuild Registered");
+                }
+                else 
+                {
+                     MessageBox.Show("No Visual Studio instances found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Fallback or handle error appropriately in GUI context
+                MessageBox.Show($"Failed to register MSBuild: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
     }

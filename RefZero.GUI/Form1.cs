@@ -27,6 +27,39 @@ namespace RefZero.GUI
             }
         }
 
+        private void btnAnalyzeOnly_Click(object sender, EventArgs e)
+        {
+            string projectPath = txtProjectPath.Text;
+
+            if (string.IsNullOrEmpty(projectPath) || !File.Exists(projectPath))
+            {
+                MessageBox.Show("Please select a valid project file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            rtbLog.AppendText($"Starting analysis for {Path.GetFileName(projectPath)}...\n");
+            
+            try
+            {
+                var analyzer = new DependencyAnalyzer();
+                var projectInfo = analyzer.Analyze(projectPath);
+                
+                rtbLog.AppendText($"Found {projectInfo.References.Count()} references.\n");
+                
+                foreach(var refItem in projectInfo.References)
+                {
+                    rtbLog.AppendText($"[REF] {refItem.Name} ({refItem.Version}) -> {refItem.PhysicalPath}\n");
+                }
+                
+                rtbLog.AppendText("Analysis completed.\n");
+            }
+            catch (Exception ex)
+            {
+                rtbLog.AppendText($"Error: {ex.Message}\n");
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnBrowseOutput_Click(object sender, EventArgs e)
         {
             using (var fbd = new FolderBrowserDialog())

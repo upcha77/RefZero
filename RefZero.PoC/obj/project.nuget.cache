@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p2GR+Brr25Q=",
+  "dgSpecHash": "vE3JVuu+9A8=",
   "success": true,
   "projectFilePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.PoC\\RefZero.PoC.csproj",
   "expectedPackageFiles": [
@@ -27,8 +27,10 @@
     {
       "code": "NU1903",
       "level": "Warning",
+      "message": "'Microsoft.Build' 17.8.3 패키지에 알려진 높음 심각도 취약성인 https://github.com/advisories/GHSA-w3q9-fxm7-j8fq이(가) 있습니다.",
+      "projectPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.PoC\\RefZero.PoC.csproj",
       "warningLevel": 1,
-      "message": "'Microsoft.Build' 17.8.3 패키지에 알려진 높은 심각도 취약성인 https://github.com/advisories/GHSA-w3q9-fxm7-j8fq이(가) 있습니다.",
+      "filePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.PoC\\RefZero.PoC.csproj",
       "libraryId": "Microsoft.Build",
       "targetGraphs": [
         "net8.0"
@@ -37,8 +39,10 @@
     {
       "code": "NU1903",
       "level": "Warning",
+      "message": "'Microsoft.Build.Utilities.Core' 17.8.3 패키지에 알려진 높음 심각도 취약성인 https://github.com/advisories/GHSA-w3q9-fxm7-j8fq이(가) 있습니다.",
+      "projectPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.PoC\\RefZero.PoC.csproj",
       "warningLevel": 1,
-      "message": "'Microsoft.Build.Utilities.Core' 17.8.3 패키지에 알려진 높은 심각도 취약성인 https://github.com/advisories/GHSA-w3q9-fxm7-j8fq이(가) 있습니다.",
+      "filePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.PoC\\RefZero.PoC.csproj",
       "libraryId": "Microsoft.Build.Utilities.Core",
       "targetGraphs": [
         "net8.0"

@@ -40,7 +40,9 @@ namespace RefZero.GUI
             this.lblOutput = new System.Windows.Forms.Label();
             this.txtOutputPath = new System.Windows.Forms.TextBox();
             this.btnBrowseOutput = new System.Windows.Forms.Button();
+            this.btnAnalyzeOnly = new System.Windows.Forms.Button();
             this.btnCollect = new System.Windows.Forms.Button();
+            this.btnOpenFolder = new System.Windows.Forms.Button();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
 
             // Cleaner Controls
@@ -97,6 +99,7 @@ namespace RefZero.GUI
             // 
             // tabAggregator
             // 
+            this.tabAggregator.Controls.Add(this.btnAnalyzeOnly);
             this.tabAggregator.Controls.Add(this.btnOpenFolder);
             this.tabAggregator.Controls.Add(this.rtbLog);
             this.tabAggregator.Controls.Add(this.btnCollect);
@@ -141,9 +144,20 @@ namespace RefZero.GUI
             this.btnBrowseOutput.Click += new System.EventHandler(this.btnBrowseOutput_Click);
 
             // 
+            // btnAnalyzeOnly (New)
+            // 
+            this.btnAnalyzeOnly.Location = new System.Drawing.Point(18, 50);
+            this.btnAnalyzeOnly.Name = "btnAnalyzeOnly";
+            this.btnAnalyzeOnly.Size = new System.Drawing.Size(100, 30);
+            this.btnAnalyzeOnly.TabIndex = 6;
+            this.btnAnalyzeOnly.Text = "Analyze Only";
+            this.btnAnalyzeOnly.UseVisualStyleBackColor = true;
+            this.btnAnalyzeOnly.Click += new System.EventHandler(this.btnAnalyzeOnly_Click);
+
+            // 
             // btnCollect
             // 
-            this.btnCollect.Location = new System.Drawing.Point(18, 50);
+            this.btnCollect.Location = new System.Drawing.Point(130, 50);
             this.btnCollect.Name = "btnCollect";
             this.btnCollect.Size = new System.Drawing.Size(150, 30);
             this.btnCollect.TabIndex = 3;
@@ -154,7 +168,7 @@ namespace RefZero.GUI
             // 
             // btnOpenFolder
             // 
-            this.btnOpenFolder.Location = new System.Drawing.Point(180, 50);
+            this.btnOpenFolder.Location = new System.Drawing.Point(290, 50);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(120, 30);
             this.btnOpenFolder.TabIndex = 5;
@@ -261,6 +275,7 @@ namespace RefZero.GUI
         private System.Windows.Forms.TextBox txtOutputPath;
         private System.Windows.Forms.Button btnBrowseOutput;
         private System.Windows.Forms.Button btnCollect;
+        private System.Windows.Forms.Button btnAnalyzeOnly;
         private System.Windows.Forms.Button btnOpenFolder;
         private System.Windows.Forms.RichTextBox rtbLog;
         private System.Windows.Forms.Button btnAnalyze;

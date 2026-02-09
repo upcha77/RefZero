@@ -1,0 +1,50 @@
+## Visual Studio ##
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.cache
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+/packages/
+/TestResults/
+
+## .NET Core & .NET Framework ##
+bin/
+obj/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Resharper ##
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## RefZero Specific ##
+libs/
+dump/
+*.log
+metrics.json
+
+## OS ##
+Thumbs.db
+Desktop.ini
+.DS_Store
