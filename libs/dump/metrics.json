@@ -1,0 +1,1318 @@
+[
+  {
+    "Name": "Accessibility",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\Accessibility.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Accessibility.dll"
+  },
+  {
+    "Name": "Microsoft.CSharp",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\Microsoft.CSharp.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Microsoft.CSharp.dll"
+  },
+  {
+    "Name": "Microsoft.VisualBasic.Core",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\Microsoft.VisualBasic.Core.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Microsoft.VisualBasic.Core.dll"
+  },
+  {
+    "Name": "Microsoft.VisualBasic",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\Microsoft.VisualBasic.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Microsoft.VisualBasic.dll"
+  },
+  {
+    "Name": "Microsoft.VisualBasic.Forms",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\Microsoft.VisualBasic.Forms.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Microsoft.VisualBasic.Forms.dll"
+  },
+  {
+    "Name": "Microsoft.Win32.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\Microsoft.Win32.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Microsoft.Win32.Primitives.dll"
+  },
+  {
+    "Name": "Microsoft.Win32.Registry.AccessControl",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\Microsoft.Win32.Registry.AccessControl.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Microsoft.Win32.Registry.AccessControl.dll"
+  },
+  {
+    "Name": "Microsoft.Win32.Registry",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\Microsoft.Win32.Registry.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Microsoft.Win32.Registry.dll"
+  },
+  {
+    "Name": "Microsoft.Win32.SystemEvents",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\Microsoft.Win32.SystemEvents.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Microsoft.Win32.SystemEvents.dll"
+  },
+  {
+    "Name": "mscorlib",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\mscorlib.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\mscorlib.dll"
+  },
+  {
+    "Name": "netstandard",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\netstandard.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\netstandard.dll"
+  },
+  {
+    "Name": "Newtonsoft.Json",
+    "Version": "",
+    "Source": "Local/NuGet",
+    "OriginalPath": "C:\\Users\\uprdp\\.nuget\\packages\\newtonsoft.json\\13.0.3\\lib\\net6.0\\Newtonsoft.Json.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\Newtonsoft.Json.dll"
+  },
+  {
+    "Name": "System.AppContext",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.AppContext.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.AppContext.dll"
+  },
+  {
+    "Name": "System.Buffers",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Buffers.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Buffers.dll"
+  },
+  {
+    "Name": "System.CodeDom",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.CodeDom.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.CodeDom.dll"
+  },
+  {
+    "Name": "System.Collections.Concurrent",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Collections.Concurrent.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Collections.Concurrent.dll"
+  },
+  {
+    "Name": "System.Collections",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Collections.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Collections.dll"
+  },
+  {
+    "Name": "System.Collections.Immutable",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Collections.Immutable.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Collections.Immutable.dll"
+  },
+  {
+    "Name": "System.Collections.NonGeneric",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Collections.NonGeneric.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Collections.NonGeneric.dll"
+  },
+  {
+    "Name": "System.Collections.Specialized",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Collections.Specialized.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Collections.Specialized.dll"
+  },
+  {
+    "Name": "System.ComponentModel.Annotations",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ComponentModel.Annotations.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ComponentModel.Annotations.dll"
+  },
+  {
+    "Name": "System.ComponentModel.DataAnnotations",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ComponentModel.DataAnnotations.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ComponentModel.DataAnnotations.dll"
+  },
+  {
+    "Name": "System.ComponentModel",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ComponentModel.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ComponentModel.dll"
+  },
+  {
+    "Name": "System.ComponentModel.EventBasedAsync",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ComponentModel.EventBasedAsync.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ComponentModel.EventBasedAsync.dll"
+  },
+  {
+    "Name": "System.ComponentModel.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ComponentModel.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ComponentModel.Primitives.dll"
+  },
+  {
+    "Name": "System.ComponentModel.TypeConverter",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ComponentModel.TypeConverter.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ComponentModel.TypeConverter.dll"
+  },
+  {
+    "Name": "System.Configuration.ConfigurationManager",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Configuration.ConfigurationManager.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Configuration.ConfigurationManager.dll"
+  },
+  {
+    "Name": "System.Configuration",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Configuration.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Configuration.dll"
+  },
+  {
+    "Name": "System.Console",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Console.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Console.dll"
+  },
+  {
+    "Name": "System.Core",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Core.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Core.dll"
+  },
+  {
+    "Name": "System.Data.Common",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Data.Common.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Data.Common.dll"
+  },
+  {
+    "Name": "System.Data.DataSetExtensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Data.DataSetExtensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Data.DataSetExtensions.dll"
+  },
+  {
+    "Name": "System.Data",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Data.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Data.dll"
+  },
+  {
+    "Name": "System.Design",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Design.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Design.dll"
+  },
+  {
+    "Name": "System.Diagnostics.Contracts",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.Contracts.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.Contracts.dll"
+  },
+  {
+    "Name": "System.Diagnostics.Debug",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.Debug.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.Debug.dll"
+  },
+  {
+    "Name": "System.Diagnostics.DiagnosticSource",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.DiagnosticSource.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.DiagnosticSource.dll"
+  },
+  {
+    "Name": "System.Diagnostics.EventLog",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.EventLog.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.EventLog.dll"
+  },
+  {
+    "Name": "System.Diagnostics.FileVersionInfo",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.FileVersionInfo.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.FileVersionInfo.dll"
+  },
+  {
+    "Name": "System.Diagnostics.PerformanceCounter",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.PerformanceCounter.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.PerformanceCounter.dll"
+  },
+  {
+    "Name": "System.Diagnostics.Process",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.Process.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.Process.dll"
+  },
+  {
+    "Name": "System.Diagnostics.StackTrace",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.StackTrace.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.StackTrace.dll"
+  },
+  {
+    "Name": "System.Diagnostics.TextWriterTraceListener",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.TextWriterTraceListener.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.TextWriterTraceListener.dll"
+  },
+  {
+    "Name": "System.Diagnostics.Tools",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.Tools.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.Tools.dll"
+  },
+  {
+    "Name": "System.Diagnostics.TraceSource",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.TraceSource.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.TraceSource.dll"
+  },
+  {
+    "Name": "System.Diagnostics.Tracing",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Diagnostics.Tracing.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Diagnostics.Tracing.dll"
+  },
+  {
+    "Name": "System.DirectoryServices",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.DirectoryServices.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.DirectoryServices.dll"
+  },
+  {
+    "Name": "System",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.dll"
+  },
+  {
+    "Name": "System.Drawing.Common",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Drawing.Common.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Drawing.Common.dll"
+  },
+  {
+    "Name": "System.Drawing.Design",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Drawing.Design.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Drawing.Design.dll"
+  },
+  {
+    "Name": "System.Drawing",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Drawing.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Drawing.dll"
+  },
+  {
+    "Name": "System.Drawing.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Drawing.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Drawing.Primitives.dll"
+  },
+  {
+    "Name": "System.Dynamic.Runtime",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Dynamic.Runtime.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Dynamic.Runtime.dll"
+  },
+  {
+    "Name": "System.Formats.Asn1",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Formats.Asn1.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Formats.Asn1.dll"
+  },
+  {
+    "Name": "System.Formats.Tar",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Formats.Tar.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Formats.Tar.dll"
+  },
+  {
+    "Name": "System.Globalization.Calendars",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Globalization.Calendars.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Globalization.Calendars.dll"
+  },
+  {
+    "Name": "System.Globalization",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Globalization.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Globalization.dll"
+  },
+  {
+    "Name": "System.Globalization.Extensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Globalization.Extensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Globalization.Extensions.dll"
+  },
+  {
+    "Name": "System.IO.Compression.Brotli",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.Compression.Brotli.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.Compression.Brotli.dll"
+  },
+  {
+    "Name": "System.IO.Compression",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.Compression.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.Compression.dll"
+  },
+  {
+    "Name": "System.IO.Compression.FileSystem",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.Compression.FileSystem.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.Compression.FileSystem.dll"
+  },
+  {
+    "Name": "System.IO.Compression.ZipFile",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.Compression.ZipFile.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.Compression.ZipFile.dll"
+  },
+  {
+    "Name": "System.IO",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.dll"
+  },
+  {
+    "Name": "System.IO.FileSystem.AccessControl",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.FileSystem.AccessControl.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.FileSystem.AccessControl.dll"
+  },
+  {
+    "Name": "System.IO.FileSystem",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.FileSystem.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.FileSystem.dll"
+  },
+  {
+    "Name": "System.IO.FileSystem.DriveInfo",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.FileSystem.DriveInfo.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.FileSystem.DriveInfo.dll"
+  },
+  {
+    "Name": "System.IO.FileSystem.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.FileSystem.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.FileSystem.Primitives.dll"
+  },
+  {
+    "Name": "System.IO.FileSystem.Watcher",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.FileSystem.Watcher.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.FileSystem.Watcher.dll"
+  },
+  {
+    "Name": "System.IO.IsolatedStorage",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.IsolatedStorage.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.IsolatedStorage.dll"
+  },
+  {
+    "Name": "System.IO.MemoryMappedFiles",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.MemoryMappedFiles.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.MemoryMappedFiles.dll"
+  },
+  {
+    "Name": "System.IO.Packaging",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.Packaging.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.Packaging.dll"
+  },
+  {
+    "Name": "System.IO.Pipes.AccessControl",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.Pipes.AccessControl.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.Pipes.AccessControl.dll"
+  },
+  {
+    "Name": "System.IO.Pipes",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.Pipes.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.Pipes.dll"
+  },
+  {
+    "Name": "System.IO.UnmanagedMemoryStream",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.IO.UnmanagedMemoryStream.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.IO.UnmanagedMemoryStream.dll"
+  },
+  {
+    "Name": "System.Linq",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Linq.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Linq.dll"
+  },
+  {
+    "Name": "System.Linq.Expressions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Linq.Expressions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Linq.Expressions.dll"
+  },
+  {
+    "Name": "System.Linq.Parallel",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Linq.Parallel.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Linq.Parallel.dll"
+  },
+  {
+    "Name": "System.Linq.Queryable",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Linq.Queryable.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Linq.Queryable.dll"
+  },
+  {
+    "Name": "System.Memory",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Memory.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Memory.dll"
+  },
+  {
+    "Name": "System.Net",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.dll"
+  },
+  {
+    "Name": "System.Net.Http",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Http.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Http.dll"
+  },
+  {
+    "Name": "System.Net.Http.Json",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Http.Json.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Http.Json.dll"
+  },
+  {
+    "Name": "System.Net.HttpListener",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.HttpListener.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.HttpListener.dll"
+  },
+  {
+    "Name": "System.Net.Mail",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Mail.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Mail.dll"
+  },
+  {
+    "Name": "System.Net.NameResolution",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.NameResolution.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.NameResolution.dll"
+  },
+  {
+    "Name": "System.Net.NetworkInformation",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.NetworkInformation.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.NetworkInformation.dll"
+  },
+  {
+    "Name": "System.Net.Ping",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Ping.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Ping.dll"
+  },
+  {
+    "Name": "System.Net.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Primitives.dll"
+  },
+  {
+    "Name": "System.Net.Quic",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Quic.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Quic.dll"
+  },
+  {
+    "Name": "System.Net.Requests",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Requests.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Requests.dll"
+  },
+  {
+    "Name": "System.Net.Security",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Security.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Security.dll"
+  },
+  {
+    "Name": "System.Net.ServicePoint",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.ServicePoint.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.ServicePoint.dll"
+  },
+  {
+    "Name": "System.Net.Sockets",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.Sockets.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.Sockets.dll"
+  },
+  {
+    "Name": "System.Net.WebClient",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.WebClient.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.WebClient.dll"
+  },
+  {
+    "Name": "System.Net.WebHeaderCollection",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.WebHeaderCollection.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.WebHeaderCollection.dll"
+  },
+  {
+    "Name": "System.Net.WebProxy",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.WebProxy.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.WebProxy.dll"
+  },
+  {
+    "Name": "System.Net.WebSockets.Client",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.WebSockets.Client.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.WebSockets.Client.dll"
+  },
+  {
+    "Name": "System.Net.WebSockets",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Net.WebSockets.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Net.WebSockets.dll"
+  },
+  {
+    "Name": "System.Numerics",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Numerics.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Numerics.dll"
+  },
+  {
+    "Name": "System.Numerics.Vectors",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Numerics.Vectors.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Numerics.Vectors.dll"
+  },
+  {
+    "Name": "System.ObjectModel",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ObjectModel.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ObjectModel.dll"
+  },
+  {
+    "Name": "System.Reflection.DispatchProxy",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.DispatchProxy.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.DispatchProxy.dll"
+  },
+  {
+    "Name": "System.Reflection",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.dll"
+  },
+  {
+    "Name": "System.Reflection.Emit",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.Emit.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.Emit.dll"
+  },
+  {
+    "Name": "System.Reflection.Emit.ILGeneration",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.Emit.ILGeneration.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.Emit.ILGeneration.dll"
+  },
+  {
+    "Name": "System.Reflection.Emit.Lightweight",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.Emit.Lightweight.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.Emit.Lightweight.dll"
+  },
+  {
+    "Name": "System.Reflection.Extensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.Extensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.Extensions.dll"
+  },
+  {
+    "Name": "System.Reflection.Metadata",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.Metadata.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.Metadata.dll"
+  },
+  {
+    "Name": "System.Reflection.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.Primitives.dll"
+  },
+  {
+    "Name": "System.Reflection.TypeExtensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Reflection.TypeExtensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Reflection.TypeExtensions.dll"
+  },
+  {
+    "Name": "System.Resources.Extensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Resources.Extensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Resources.Extensions.dll"
+  },
+  {
+    "Name": "System.Resources.Reader",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Resources.Reader.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Resources.Reader.dll"
+  },
+  {
+    "Name": "System.Resources.ResourceManager",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Resources.ResourceManager.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Resources.ResourceManager.dll"
+  },
+  {
+    "Name": "System.Resources.Writer",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Resources.Writer.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Resources.Writer.dll"
+  },
+  {
+    "Name": "System.Runtime.CompilerServices.Unsafe",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.CompilerServices.Unsafe.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.CompilerServices.Unsafe.dll"
+  },
+  {
+    "Name": "System.Runtime.CompilerServices.VisualC",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.CompilerServices.VisualC.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.CompilerServices.VisualC.dll"
+  },
+  {
+    "Name": "System.Runtime",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.dll"
+  },
+  {
+    "Name": "System.Runtime.Extensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Extensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Extensions.dll"
+  },
+  {
+    "Name": "System.Runtime.Handles",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Handles.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Handles.dll"
+  },
+  {
+    "Name": "System.Runtime.InteropServices",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.InteropServices.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.InteropServices.dll"
+  },
+  {
+    "Name": "System.Runtime.InteropServices.JavaScript",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.InteropServices.JavaScript.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.InteropServices.JavaScript.dll"
+  },
+  {
+    "Name": "System.Runtime.InteropServices.RuntimeInformation",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.InteropServices.RuntimeInformation.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.InteropServices.RuntimeInformation.dll"
+  },
+  {
+    "Name": "System.Runtime.Intrinsics",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Intrinsics.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Intrinsics.dll"
+  },
+  {
+    "Name": "System.Runtime.Loader",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Loader.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Loader.dll"
+  },
+  {
+    "Name": "System.Runtime.Numerics",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Numerics.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Numerics.dll"
+  },
+  {
+    "Name": "System.Runtime.Serialization",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Serialization.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Serialization.dll"
+  },
+  {
+    "Name": "System.Runtime.Serialization.Formatters",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Serialization.Formatters.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Serialization.Formatters.dll"
+  },
+  {
+    "Name": "System.Runtime.Serialization.Json",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Serialization.Json.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Serialization.Json.dll"
+  },
+  {
+    "Name": "System.Runtime.Serialization.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Serialization.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Serialization.Primitives.dll"
+  },
+  {
+    "Name": "System.Runtime.Serialization.Xml",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Runtime.Serialization.Xml.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Runtime.Serialization.Xml.dll"
+  },
+  {
+    "Name": "System.Security.AccessControl",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.AccessControl.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.AccessControl.dll"
+  },
+  {
+    "Name": "System.Security.Claims",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Claims.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Claims.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.Algorithms",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.Algorithms.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.Algorithms.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.Cng",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.Cng.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.Cng.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.Csp",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.Csp.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.Csp.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.Encoding",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.Encoding.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.Encoding.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.OpenSsl",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.OpenSsl.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.OpenSsl.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.Pkcs",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.Pkcs.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.Pkcs.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.Primitives.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.ProtectedData",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.ProtectedData.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.ProtectedData.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.X509Certificates",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.X509Certificates.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.X509Certificates.dll"
+  },
+  {
+    "Name": "System.Security.Cryptography.Xml",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Cryptography.Xml.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Cryptography.Xml.dll"
+  },
+  {
+    "Name": "System.Security",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.dll"
+  },
+  {
+    "Name": "System.Security.Permissions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Permissions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Permissions.dll"
+  },
+  {
+    "Name": "System.Security.Principal",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Principal.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Principal.dll"
+  },
+  {
+    "Name": "System.Security.Principal.Windows",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.Principal.Windows.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.Principal.Windows.dll"
+  },
+  {
+    "Name": "System.Security.SecureString",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Security.SecureString.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Security.SecureString.dll"
+  },
+  {
+    "Name": "System.ServiceModel.Web",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ServiceModel.Web.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ServiceModel.Web.dll"
+  },
+  {
+    "Name": "System.ServiceProcess",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ServiceProcess.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ServiceProcess.dll"
+  },
+  {
+    "Name": "System.Text.Encoding.CodePages",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Text.Encoding.CodePages.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Text.Encoding.CodePages.dll"
+  },
+  {
+    "Name": "System.Text.Encoding",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Text.Encoding.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Text.Encoding.dll"
+  },
+  {
+    "Name": "System.Text.Encoding.Extensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Text.Encoding.Extensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Text.Encoding.Extensions.dll"
+  },
+  {
+    "Name": "System.Text.Encodings.Web",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Text.Encodings.Web.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Text.Encodings.Web.dll"
+  },
+  {
+    "Name": "System.Text.Json",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Text.Json.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Text.Json.dll"
+  },
+  {
+    "Name": "System.Text.RegularExpressions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Text.RegularExpressions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Text.RegularExpressions.dll"
+  },
+  {
+    "Name": "System.Threading.AccessControl",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.AccessControl.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.AccessControl.dll"
+  },
+  {
+    "Name": "System.Threading.Channels",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.Channels.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.Channels.dll"
+  },
+  {
+    "Name": "System.Threading",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.dll"
+  },
+  {
+    "Name": "System.Threading.Overlapped",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.Overlapped.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.Overlapped.dll"
+  },
+  {
+    "Name": "System.Threading.Tasks.Dataflow",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.Tasks.Dataflow.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.Tasks.Dataflow.dll"
+  },
+  {
+    "Name": "System.Threading.Tasks",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.Tasks.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.Tasks.dll"
+  },
+  {
+    "Name": "System.Threading.Tasks.Extensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.Tasks.Extensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.Tasks.Extensions.dll"
+  },
+  {
+    "Name": "System.Threading.Tasks.Parallel",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.Tasks.Parallel.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.Tasks.Parallel.dll"
+  },
+  {
+    "Name": "System.Threading.Thread",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.Thread.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.Thread.dll"
+  },
+  {
+    "Name": "System.Threading.ThreadPool",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.ThreadPool.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.ThreadPool.dll"
+  },
+  {
+    "Name": "System.Threading.Timer",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Threading.Timer.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Threading.Timer.dll"
+  },
+  {
+    "Name": "System.Transactions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Transactions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Transactions.dll"
+  },
+  {
+    "Name": "System.Transactions.Local",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Transactions.Local.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Transactions.Local.dll"
+  },
+  {
+    "Name": "System.ValueTuple",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.ValueTuple.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.ValueTuple.dll"
+  },
+  {
+    "Name": "System.Web",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Web.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Web.dll"
+  },
+  {
+    "Name": "System.Web.HttpUtility",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Web.HttpUtility.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Web.HttpUtility.dll"
+  },
+  {
+    "Name": "System.Windows",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Windows.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Windows.dll"
+  },
+  {
+    "Name": "System.Windows.Extensions",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Windows.Extensions.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Windows.Extensions.dll"
+  },
+  {
+    "Name": "System.Windows.Forms.Design",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Windows.Forms.Design.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Windows.Forms.Design.dll"
+  },
+  {
+    "Name": "System.Windows.Forms.Design.Editors",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Windows.Forms.Design.Editors.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Windows.Forms.Design.Editors.dll"
+  },
+  {
+    "Name": "System.Windows.Forms",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Windows.Forms.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Windows.Forms.dll"
+  },
+  {
+    "Name": "System.Windows.Forms.Primitives",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.WindowsDesktop.App.Ref\\8.0.23\\ref\\net8.0\\System.Windows.Forms.Primitives.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Windows.Forms.Primitives.dll"
+  },
+  {
+    "Name": "System.Xml",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.dll"
+  },
+  {
+    "Name": "System.Xml.Linq",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.Linq.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.Linq.dll"
+  },
+  {
+    "Name": "System.Xml.ReaderWriter",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.ReaderWriter.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.ReaderWriter.dll"
+  },
+  {
+    "Name": "System.Xml.Serialization",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.Serialization.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.Serialization.dll"
+  },
+  {
+    "Name": "System.Xml.XDocument",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.XDocument.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.XDocument.dll"
+  },
+  {
+    "Name": "System.Xml.XmlDocument",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.XmlDocument.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.XmlDocument.dll"
+  },
+  {
+    "Name": "System.Xml.XmlSerializer",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.XmlSerializer.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.XmlSerializer.dll"
+  },
+  {
+    "Name": "System.Xml.XPath",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.XPath.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.XPath.dll"
+  },
+  {
+    "Name": "System.Xml.XPath.XDocument",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\System.Xml.XPath.XDocument.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\System.Xml.XPath.XDocument.dll"
+  },
+  {
+    "Name": "WindowsBase",
+    "Version": "",
+    "Source": "Framework/GAC",
+    "OriginalPath": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\8.0.23\\ref\\net8.0\\WindowsBase.dll",
+    "DestinationPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\libs\\dump\\WindowsBase.dll"
+  }
+]

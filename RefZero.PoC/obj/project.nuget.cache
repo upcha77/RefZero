@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "dgSpecHash": "p2GR+Brr25Q=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.PoC\\RefZero.PoC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.build\\17.8.3\\microsoft.build.17.8.3.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.build.locator\\1.6.10\\microsoft.build.locator.1.6.10.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.build.utilities.core\\17.8.3\\microsoft.build.utilities.core.17.8.3.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.net.stringtools\\17.8.3\\microsoft.net.stringtools.17.8.3.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.visualstudio.setup.configuration.interop\\3.2.2146\\microsoft.visualstudio.setup.configuration.interop.3.2.2146.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0\\system.configuration.configurationmanager.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.reflection.metadata\\7.0.0\\system.reflection.metadata.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.reflection.metadataloadcontext\\7.0.0\\system.reflection.metadataloadcontext.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0\\system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.security.permissions\\7.0.0\\system.security.permissions.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Microsoft.Build' 17.8.3 패키지에 알려진 높은 심각도 취약성인 https://github.com/advisories/GHSA-w3q9-fxm7-j8fq이(가) 있습니다.",
+      "libraryId": "Microsoft.Build",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Microsoft.Build.Utilities.Core' 17.8.3 패키지에 알려진 높은 심각도 취약성인 https://github.com/advisories/GHSA-w3q9-fxm7-j8fq이(가) 있습니다.",
+      "libraryId": "Microsoft.Build.Utilities.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
