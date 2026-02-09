@@ -15,7 +15,10 @@ namespace RefZero.CLI
             // Register MSBuild
             try
             {
-                var instances = MSBuildLocator.QueryVisualStudioInstances().OrderByDescending(i => i.Version);
+                var instances = MSBuildLocator.QueryVisualStudioInstances()
+                    .OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup) // Prefer VS
+                    .ThenByDescending(i => i.Version);
+                
                 var instance = instances.FirstOrDefault();
 
                 if (instance == null)
@@ -125,13 +128,19 @@ namespace RefZero.CLI
             // 1. MSBuild Info
             try
             {
-                var instances = MSBuildLocator.QueryVisualStudioInstances().OrderByDescending(i => i.Version);
+                var instances = MSBuildLocator.QueryVisualStudioInstances()
+                    .OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup)
+                    .ThenByDescending(i => i.Version);
+
                 Console.WriteLine($"\n[MSBuild Instances Found: {instances.Count()}]");
+                int index = 1;
                 foreach (var inst in instances)
                 {
-                    Console.WriteLine($"- Version: {inst.Version}");
-                    Console.WriteLine($"  Path: {inst.MSBuildPath}");
-                    Console.WriteLine($"  SDK: {inst.DiscoveryType}");
+                    string activeMarker = (index == 1) ? " [ACTIVE]" : "";
+                    Console.WriteLine($"- Instance #{index++}{activeMarker}");
+                    Console.WriteLine($"  Version: {inst.Version}");
+                    Console.WriteLine($"  Path:    {inst.MSBuildPath}");
+                    Console.WriteLine($"  Type:    {inst.DiscoveryType}");
                 }
             }
             catch (Exception ex)

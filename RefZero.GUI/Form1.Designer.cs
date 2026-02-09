@@ -43,6 +43,7 @@ namespace RefZero.GUI
             this.btnAnalyzeOnly = new System.Windows.Forms.Button();
             this.btnCollect = new System.Windows.Forms.Button();
             this.btnOpenFolder = new System.Windows.Forms.Button();
+            this.btnDiagnostics = new System.Windows.Forms.Button(); // Instantiated here
             this.rtbLog = new System.Windows.Forms.RichTextBox();
 
             // Cleaner Controls
@@ -106,9 +107,10 @@ namespace RefZero.GUI
             // tabAggregator
             // 
             this.tabAggregator.Controls.Add(this.btnAnalyzeOnly);
-            this.tabAggregator.Controls.Add(this.btnOpenFolder);
-            this.tabAggregator.Controls.Add(this.rtbLog);
             this.tabAggregator.Controls.Add(this.btnCollect);
+            this.tabAggregator.Controls.Add(this.btnOpenFolder);
+            this.tabAggregator.Controls.Add(this.btnDiagnostics); // Added here
+            this.tabAggregator.Controls.Add(this.rtbLog);
             this.tabAggregator.Controls.Add(this.btnBrowseOutput);
             this.tabAggregator.Controls.Add(this.txtOutputPath);
             this.tabAggregator.Controls.Add(this.lblOutput);
@@ -164,18 +166,6 @@ namespace RefZero.GUI
             this.btnAnalyzeOnly.Click += new System.EventHandler(this.btnAnalyzeOnly_Click);
 
             // 
-            // btnDiagnostics (New)
-            // 
-            this.btnDiagnostics.Location = new System.Drawing.Point(420, 50); // Adjust position as needed
-            this.btnDiagnostics.Name = "btnDiagnostics";
-            this.btnDiagnostics.Size = new System.Drawing.Size(100, 30);
-            this.btnDiagnostics.TabIndex = 7;
-            this.btnDiagnostics.Text = "Run Diagnostics";
-            this.btnDiagnostics.UseVisualStyleBackColor = true;
-            this.btnDiagnostics.Click += new System.EventHandler(this.btnDiagnostics_Click);
-            this.tabAggregator.Controls.Add(this.btnDiagnostics);
-
-            // 
             // btnCollect
             // 
             this.btnCollect.Location = new System.Drawing.Point(130, 50);
@@ -196,6 +186,17 @@ namespace RefZero.GUI
             this.btnOpenFolder.Text = "Open Folder";
             this.btnOpenFolder.UseVisualStyleBackColor = true;
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+
+            // 
+            // btnDiagnostics
+            // 
+            this.btnDiagnostics.Location = new System.Drawing.Point(420, 50);
+            this.btnDiagnostics.Name = "btnDiagnostics";
+            this.btnDiagnostics.Size = new System.Drawing.Size(100, 30);
+            this.btnDiagnostics.TabIndex = 7;
+            this.btnDiagnostics.Text = "Run Diagnostics";
+            this.btnDiagnostics.UseVisualStyleBackColor = true;
+            this.btnDiagnostics.Click += new System.EventHandler(this.btnDiagnostics_Click);
 
             // 
             // rtbLog

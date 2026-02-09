@@ -15,6 +15,7 @@
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
+    <DisableLC>true</DisableLC>
   </PropertyGroup>
 
 </Project>
