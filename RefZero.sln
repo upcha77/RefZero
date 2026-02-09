@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefZero.Core", "RefZero.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefZero.CLI", "RefZero.CLI\RefZero.CLI.csproj", "{C7D3EDDA-740B-490D-85EA-C4E4E5EE364C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefZero.GUI", "RefZero.GUI\RefZero.GUI.csproj", "{994A9AA4-21B8-416B-AD22-EA7F46C0D49A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{C7D3EDDA-740B-490D-85EA-C4E4E5EE364C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7D3EDDA-740B-490D-85EA-C4E4E5EE364C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7D3EDDA-740B-490D-85EA-C4E4E5EE364C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{994A9AA4-21B8-416B-AD22-EA7F46C0D49A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{994A9AA4-21B8-416B-AD22-EA7F46C0D49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{994A9AA4-21B8-416B-AD22-EA7F46C0D49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{994A9AA4-21B8-416B-AD22-EA7F46C0D49A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

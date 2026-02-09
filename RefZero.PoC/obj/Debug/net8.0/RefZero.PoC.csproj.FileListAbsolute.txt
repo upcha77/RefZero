@@ -18,3 +18,4 @@ C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.pdb
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.genruntimeconfig.cache
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\ref\RefZero.PoC.dll
+C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.PoC\obj\Debug\net8.0\RefZero.PoC.sourcelink.json

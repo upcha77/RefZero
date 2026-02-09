@@ -10,3 +10,4 @@ C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\refint\RefZero.Core.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.pdb
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\ref\RefZero.Core.dll
+C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.Core\obj\Debug\net8.0\RefZero.Core.sourcelink.json
