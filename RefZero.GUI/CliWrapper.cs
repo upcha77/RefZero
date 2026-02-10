@@ -22,8 +22,8 @@ namespace RefZero.GUI
 
             // 3. Development scenario: Look in the source build output
             // Assumes we are in RefZero.GUI\bin\Debug\net48
-            // CLI is in RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.exe
-            string devExe = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.exe"));
+            // CLI is in RefZero.CLI\bin\Debug\net5.0\RefZero.CLI.exe
+            string devExe = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\RefZero.CLI\bin\Debug\net5.0\RefZero.CLI.exe"));
             if (File.Exists(devExe)) return devExe;
 
             throw new FileNotFoundException("Could not find RefZero.CLI.exe. Checked deployment folder 'CLI', local folder, and dev output.", deployedExe);

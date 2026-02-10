@@ -1,6 +1,7 @@
-﻿namespace RefZero.Core;
-
-public class Class1
+﻿namespace RefZero.Core
 {
+    public class Class1
+    {
 
+    }
 }

@@ -5,7 +5,7 @@
   </ItemGroup>
 
   <Target Name="BuildCLI" BeforeTargets="BeforeBuild">
-    <Exec Command="set DOTNET_CLI_UI_LANGUAGE=en-US &amp; dotnet build &quot;..\RefZero.CLI\RefZero.CLI.csproj&quot; -c $(Configuration)" />
+    <Exec Command="set DOTNET_CLI_UI_LANGUAGE=en-US &amp; dotnet publish &quot;..\\RefZero.CLI\\RefZero.CLI.csproj&quot; -c $(Configuration) -f net5.0 -r win-x64 --self-contained true -o &quot;$(OutDir)CLI&quot;" />
   </Target>
 
   <PropertyGroup>
