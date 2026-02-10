@@ -3356,19 +3356,19 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "Microsoft.Build >= 17.8.3",
-      "Microsoft.Build.Locator >= 1.6.10",
+      "Microsoft.Build.Locator >= 1.6.2",
       "Microsoft.Build.Utilities.Core >= 17.8.3",
       "Microsoft.CodeAnalysis.CSharp >= 4.8.0"
     ],
     ".NETFramework,Version=v4.8": [
       "Microsoft.Build >= 17.8.3",
-      "Microsoft.Build.Locator >= 1.6.10",
+      "Microsoft.Build.Locator >= 1.6.2",
       "Microsoft.Build.Utilities.Core >= 17.8.3",
       "Microsoft.CodeAnalysis.CSharp >= 4.8.0"
     ],
     "net8.0": [
       "Microsoft.Build >= 17.8.3",
-      "Microsoft.Build.Locator >= 1.6.10",
+      "Microsoft.Build.Locator >= 1.6.2",
       "Microsoft.Build.Utilities.Core >= 17.8.3",
       "Microsoft.CodeAnalysis.CSharp >= 4.8.0"
     ]
@@ -3442,7 +3442,7 @@
           },
           "Microsoft.Build.Locator": {
             "target": "Package",
-            "version": "[1.6.10, )"
+            "version": "[1.6.2, )"
           },
           "Microsoft.Build.Utilities.Core": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -3482,7 +3482,7 @@
           },
           "Microsoft.Build.Locator": {
             "target": "Package",
-            "version": "[1.6.10, )"
+            "version": "[1.6.2, )"
           },
           "Microsoft.Build.Utilities.Core": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -3506,7 +3506,7 @@
           },
           "Microsoft.Build.Locator": {
             "target": "Package",
-            "version": "[1.6.10, )"
+            "version": "[1.6.2, )"
           },
           "Microsoft.Build.Utilities.Core": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -3523,6 +3523,18 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "RefZero.Core은(는) Microsoft.Build.Locator (>= 1.6.2)에 종속되지만 Microsoft.Build.Locator 1.6.2을(를) 찾을 수 없습니다. 대신 Microsoft.Build.Locator 1.6.10이(가) 확인되었습니다.",
+      "libraryId": "Microsoft.Build.Locator",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.8",
+        "net8.0"
+      ]
+    },
     {
       "code": "NU1903",
       "level": "Warning",

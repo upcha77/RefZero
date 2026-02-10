@@ -62,7 +62,7 @@
             },
             "Microsoft.Build.Locator": {
               "target": "Package",
-              "version": "[1.6.10, )"
+              "version": "[1.6.2, )"
             },
             "System.CommandLine": {
               "target": "Package",
@@ -154,7 +154,7 @@
             },
             "Microsoft.Build.Locator": {
               "target": "Package",
-              "version": "[1.6.10, )"
+              "version": "[1.6.2, )"
             },
             "Microsoft.Build.Utilities.Core": {
               "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -194,7 +194,7 @@
             },
             "Microsoft.Build.Locator": {
               "target": "Package",
-              "version": "[1.6.10, )"
+              "version": "[1.6.2, )"
             },
             "Microsoft.Build.Utilities.Core": {
               "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -218,7 +218,7 @@
             },
             "Microsoft.Build.Locator": {
               "target": "Package",
-              "version": "[1.6.10, )"
+              "version": "[1.6.2, )"
             },
             "Microsoft.Build.Utilities.Core": {
               "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",

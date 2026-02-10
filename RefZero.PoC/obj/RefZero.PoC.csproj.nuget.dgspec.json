@@ -54,16 +54,16 @@
             "Microsoft.Build": {
               "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[17.8.3, )"
+              "version": "[18.0.2, )"
             },
             "Microsoft.Build.Locator": {
               "target": "Package",
-              "version": "[1.6.10, )"
+              "version": "[1.11.2, )"
             },
             "Microsoft.Build.Utilities.Core": {
               "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[17.8.3, )"
+              "version": "[18.0.2, )"
             }
           },
           "imports": [
