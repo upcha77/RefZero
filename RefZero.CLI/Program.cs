@@ -26,39 +26,38 @@ namespace RefZero.CLI
                     }
                 }
 
-                // Heuristic: Check if project is .NET Core/5+ or Framework
-                bool preferDotNetSdk = false;
+                // Heuristic: Check if project is SDK-style or Legacy
+                // SDK-style projects (Visual Studio 2017+) should use DotNetSdk MSBuild if possible.
+                // Legacy projects (verbose csproj) MUST use VisualStudio MSBuild.
+                bool isSdkStyle = false;
                 if (!string.IsNullOrEmpty(projectPath) && File.Exists(projectPath))
                 {
                     try
                     {
+                        // Quick text check. A full XML parse is safer but heavier.
+                        // SDK projects start with <Project Sdk="...">
                         string content = File.ReadAllText(projectPath);
-                        // Primitive check for SDK-style .NET Core/5+ targets
-                        if (content.Contains("<TargetFramework>netcoreapp") || 
-                            content.Contains("<TargetFramework>net5") || 
-                            content.Contains("<TargetFramework>net6") || 
-                            content.Contains("<TargetFramework>net7") || 
-                            content.Contains("<TargetFramework>net8"))
+                        if (content.Contains("Sdk=\"") || content.Contains("Sdk = \"")) 
                         {
-                            preferDotNetSdk = true;
+                            isSdkStyle = true;
                         }
                     }
-                    catch { /* Ignore read errors here */ }
+                    catch { /* Ignore */ }
                 }
 
                 var query = MSBuildLocator.QueryVisualStudioInstances();
                 IEnumerable<VisualStudioInstance> instances;
 
-                if (preferDotNetSdk)
+                if (isSdkStyle)
                 {
-                    // Prefer DotNetSdk (for .NET Core/5+ compatibility)
+                    // Prefer DotNetSdk for SDK-style projects (solves NETSDK1073)
                     instances = query
                         .OrderByDescending(i => i.DiscoveryType == DiscoveryType.DotNetSdk)
                         .ThenByDescending(i => i.Version);
                 }
                 else
                 {
-                    // Prefer VisualStudio (for .NET Framework compatibility)
+                    // Prefer VisualStudio for legacy projects
                     instances = query
                         .OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup)
                         .ThenByDescending(i => i.Version);
@@ -184,30 +183,26 @@ namespace RefZero.CLI
 
                 // Logic replication from Main:
                 string projectPath = projectFile.FullName;
-                bool preferDotNetSdk = false;
+                bool isSdkStyle = false;
                 if (projectFile.Exists)
                 {
                     try
                     {
                         string content = File.ReadAllText(projectPath);
-                        if (content.Contains("<TargetFramework>netcoreapp") || 
-                            content.Contains("<TargetFramework>net5") || 
-                            content.Contains("<TargetFramework>net6") || 
-                            content.Contains("<TargetFramework>net7") || 
-                            content.Contains("<TargetFramework>net8"))
+                        if (content.Contains("Sdk=\"") || content.Contains("Sdk = \"")) 
                         {
-                            preferDotNetSdk = true;
+                            isSdkStyle = true;
                         }
                     }
                     catch {}
                 }
 
-                Console.WriteLine($"\n[Heuristic] Prefer SDK? {preferDotNetSdk} (Based on TargetFramework content)");
+                Console.WriteLine($"\n[Heuristic] Is SDK Style? {isSdkStyle}");
                 
                 var query = MSBuildLocator.QueryVisualStudioInstances();
                 IEnumerable<VisualStudioInstance> instances;
 
-                if (preferDotNetSdk)
+                if (isSdkStyle)
                 {
                     instances = query.OrderByDescending(i => i.DiscoveryType == DiscoveryType.DotNetSdk).ThenByDescending(i => i.Version);
                 }
