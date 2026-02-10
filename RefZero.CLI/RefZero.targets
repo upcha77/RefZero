@@ -1,16 +1,23 @@
 <Project>
-  <Target Name="RefZeroDump" DependsOnTargets="ResolveAssemblyReferences;ResolveProjectReferences" AfterTargets="ResolveAssemblyReferences;ResolveProjectReferences">
+  <Target Name="RefZeroDump" DependsOnTargets="ResolveAssemblyReferences;ResolveProjectReferences">
+    
     <ItemGroup>
+      <!-- Binary References -->
       <_RefZeroItem Include="@(ReferencePath)">
         <Type>Binary</Type>
+        <OriginalPath>%(FullPath)</OriginalPath>
       </_RefZeroItem>
-      <_RefZeroItem Include="@(ProjectReference)">
+      
+      <!-- Project References (Resolved to their output DLLs) -->
+       <_RefZeroItem Include="@(_ResolvedProjectReferencePaths)">
         <Type>Project</Type>
+        <OriginalPath>%(FullPath)</OriginalPath>
       </_RefZeroItem>
     </ItemGroup>
 
     <Message Text="REFZERO_START" Importance="High" />
-    <Message Text="@(_RefZeroItem->'ITEM|%(Type)|%(Identity)|%(FullPath)', '%0A')" Importance="High" />
+    <!-- Format: ITEM|Type|Name|FullPath -->
+    <Message Text="@(_RefZeroItem->'ITEM|%(Type)|%(Filename)|%(OriginalPath)', '%0A')" Importance="High" />
     <Message Text="REFZERO_END" Importance="High" />
   </Target>
 </Project>

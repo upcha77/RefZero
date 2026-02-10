@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
   <Target Name="BuildCLI" BeforeTargets="BeforeBuild">
-    <Exec Command="dotnet build &quot;..\RefZero.CLI\RefZero.CLI.csproj&quot; -c $(Configuration)" />
+    <Exec Command="set DOTNET_CLI_UI_LANGUAGE=en-US &amp; dotnet build &quot;..\RefZero.CLI\RefZero.CLI.csproj&quot; -c $(Configuration)" />
   </Target>
 
   <PropertyGroup>

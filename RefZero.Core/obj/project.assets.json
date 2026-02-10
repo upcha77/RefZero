@@ -304,7 +304,7 @@
           "buildTransitive/net462/_._": {}
         }
       },
-      "System.Text.Json/8.0.0": {
+      "System.Text.Json/8.0.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "8.0.0",
@@ -666,7 +666,7 @@
           "buildTransitive/net462/_._": {}
         }
       },
-      "System.Text.Json/8.0.0": {
+      "System.Text.Json/8.0.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "8.0.0",
@@ -953,7 +953,7 @@
           }
         }
       },
-      "System.Text.Json/8.0.0": {
+      "System.Text.Json/8.0.5": {
         "type": "package",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0",
@@ -1186,33 +1186,8 @@
           }
         }
       },
-      "System.Text.Encodings.Web/8.0.0": {
+      "System.Text.Json/8.0.5": {
         "type": "package",
-        "compile": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll": {
-            "assetType": "runtime",
-            "rid": "browser"
-          }
-        }
-      },
-      "System.Text.Json/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "8.0.0"
-        },
         "compile": {
           "lib/net8.0/System.Text.Json.dll": {
             "related": ".xml"
@@ -1877,10 +1852,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/8.0.0": {
-      "sha512": "OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
+    "System.Text.Json/8.0.5": {
+      "sha512": "0f1B50Ss7rqxXiaBJyzUu9bWFOO2/zSlifZ/UNMdiIpDYe4cY4LQQicP4nirK1OS31I43rn062UIJ1Q9bpmHpg==",
       "type": "package",
-      "path": "system.text.json/8.0.0",
+      "path": "system.text.json/8.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1945,7 +1920,7 @@
         "lib/net8.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.8.0.0.nupkg.sha512",
+        "system.text.json.8.0.5.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -2035,19 +2010,19 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "Microsoft.CodeAnalysis.CSharp >= 4.2.0",
-      "System.Text.Json >= 8.0.0"
+      "System.Text.Json >= 8.0.5"
     ],
     ".NETFramework,Version=v4.8": [
       "Microsoft.CodeAnalysis.CSharp >= 4.2.0",
-      "System.Text.Json >= 8.0.0"
+      "System.Text.Json >= 8.0.5"
     ],
     "net6.0": [
       "Microsoft.CodeAnalysis.CSharp >= 4.2.0",
-      "System.Text.Json >= 8.0.0"
+      "System.Text.Json >= 8.0.5"
     ],
     "net8.0": [
       "Microsoft.CodeAnalysis.CSharp >= 4.2.0",
-      "System.Text.Json >= 8.0.0"
+      "System.Text.Json >= 8.0.5"
     ]
   },
   "packageFolders": {
@@ -2123,7 +2098,7 @@
           },
           "System.Text.Json": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.0.5, )"
           }
         },
         "imports": [
@@ -2167,7 +2142,7 @@
           },
           "System.Text.Json": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.0.5, )"
           }
         },
         "imports": [
@@ -2197,7 +2172,7 @@
           },
           "System.Text.Json": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.0.5, )"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\RuntimeIdentifierGraph.json"
@@ -2211,39 +2186,11 @@
           },
           "System.Text.Json": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.0.5, )"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "'System.Text.Json' 8.0.0 패키지에 알려진 높음 심각도 취약성인 https://github.com/advisories/GHSA-8g4q-xg66-9fp4이(가) 있습니다.",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2",
-        ".NETFramework,Version=v4.8",
-        "net6.0",
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "'System.Text.Json' 8.0.0 패키지에 알려진 높음 심각도 취약성인 https://github.com/advisories/GHSA-hh2w-p6rv-4g7w이(가) 있습니다.",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2",
-        ".NETFramework,Version=v4.8",
-        "net6.0",
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

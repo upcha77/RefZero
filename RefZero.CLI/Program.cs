@@ -45,6 +45,28 @@ namespace RefZero.CLI
             rootCommand.AddCommand(analyzeCommand);
             rootCommand.AddCommand(diagnosticsCommand);
 
+            // Clean Command
+            var cleanCommand = new Command("clean", "Analyze unused references.");
+            cleanCommand.AddOption(projectOption);
+            var dryRunOption = new Option<bool>("--dry-run", "Simulate without changes.");
+            var jsonOption = new Option<bool>("--json", "Output results as JSON.");
+            cleanCommand.AddOption(dryRunOption);
+            cleanCommand.AddOption(jsonOption);
+            cleanCommand.SetHandler((FileInfo p) => RunCleanAnalysis(p), projectOption);
+            rootCommand.AddCommand(cleanCommand);
+
+            // Remove Command
+            var removeCommand = new Command("remove", "Remove specific references.");
+            removeCommand.AddOption(projectOption);
+            var refsOption = new Option<string[]>(
+                name: "--references",
+                description: "References to remove.")
+            { IsRequired = true, AllowMultipleArgumentsPerToken = true };
+            refsOption.AddAlias("-r");
+            removeCommand.AddOption(refsOption);
+            removeCommand.SetHandler((FileInfo p, string[] r) => RemoveReferences(p, r), projectOption, refsOption);
+            rootCommand.AddCommand(removeCommand);
+
             return rootCommand.Invoke(args);
         }
 
@@ -177,7 +199,15 @@ namespace RefZero.CLI
                 {
                     if (File.Exists(refItem.PhysicalPath))
                     {
-                        string dest = Path.Combine(outputDir.FullName, Path.GetFileName(refItem.PhysicalPath));
+                        string destDir = outputDir.FullName;
+                        
+                        if (refItem.SourceType.Equals("Project", StringComparison.OrdinalIgnoreCase))
+                        {
+                            destDir = Path.Combine(outputDir.FullName, "refByPrj");
+                            if (!Directory.Exists(destDir)) Directory.CreateDirectory(destDir);
+                        }
+
+                        string dest = Path.Combine(destDir, Path.GetFileName(refItem.PhysicalPath));
                         File.Copy(refItem.PhysicalPath, dest, true);
                     }
                 }
@@ -230,6 +260,41 @@ namespace RefZero.CLI
                 Console.WriteLine(ex.Message);
             }
             Console.WriteLine("\n=== End Diagnostics ===");
+        }
+
+        static void RunCleanAnalysis(FileInfo projectFile)
+        {
+             try
+             {
+                 var allReferences = ExecuteMSBuildAnalysis(projectFile);
+                 var cleaner = new ReferenceCleaner();
+                 // We need to pass IEnumerable<IReferenceItem>, List<ReferenceItem> satisfies this.
+                 var unused = cleaner.AnalyzeUnusedReferences(projectFile.FullName, allReferences);
+                 
+                 var options = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
+                 string json = System.Text.Json.JsonSerializer.Serialize(unused, options);
+                 Console.WriteLine(json);
+             }
+             catch (Exception ex)
+             {
+                 Console.Error.WriteLine($"Clean Analysis Failed: {ex.Message}");
+                 Environment.Exit(1);
+             }
+        }
+
+        static void RemoveReferences(FileInfo projectFile, string[] references)
+        {
+            try
+            {
+                var cleaner = new ReferenceCleaner();
+                cleaner.RemoveReferences(projectFile.FullName, references);
+                Console.WriteLine($"Successfully removed {references.Length} references.");
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Remove Failed: {ex.Message}");
+                Environment.Exit(1);
+            }
         }
     }
 }

@@ -187,6 +187,7 @@ namespace RefZero.GUI
                     {
                         clbUnusedRefs.Items.Add(item, true); // Default checked
                     }
+                    chkSelectAll.Checked = true;
                     lblStatus.Text = $"Found {unusedRefs.Count} unused references.";
                 }
             }
@@ -243,6 +244,20 @@ namespace RefZero.GUI
                 {
                     MessageBox.Show($"Removal failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnClearLog_Click(object sender, EventArgs e)
+        {
+            rtbLog.Clear();
+        }
+
+        private void chkSelectAll_CheckedChanged_1(object sender, EventArgs e)
+        {
+            bool state = chkSelectAll.Checked;
+            for (int i = 0; i < clbUnusedRefs.Items.Count; i++)
+            {
+                clbUnusedRefs.SetItemChecked(i, state);
             }
         }
     }

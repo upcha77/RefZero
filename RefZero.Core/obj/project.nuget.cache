@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "W61F6PES/is=",
+  "dgSpecHash": "HU7rfZkfwIY=",
   "success": true,
   "projectFilePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.Core\\RefZero.Core.csproj",
   "expectedPackageFiles": [
@@ -17,43 +17,12 @@
     "C:\\Users\\uprdp\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\uprdp\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "C:\\Users\\uprdp\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\uprdp\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
+    "C:\\Users\\uprdp\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512",
     "C:\\Users\\uprdp\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\uprdp\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
     "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
     "C:\\Users\\uprdp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "'System.Text.Json' 8.0.0 패키지에 알려진 높음 심각도 취약성인 https://github.com/advisories/GHSA-8g4q-xg66-9fp4이(가) 있습니다.",
-      "projectPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.Core\\RefZero.Core.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.Core\\RefZero.Core.csproj",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2",
-        ".NETFramework,Version=v4.8",
-        "net6.0",
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "'System.Text.Json' 8.0.0 패키지에 알려진 높음 심각도 취약성인 https://github.com/advisories/GHSA-hh2w-p6rv-4g7w이(가) 있습니다.",
-      "projectPath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.Core\\RefZero.Core.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\uprdp\\.gemini\\antigravity\\scratch\\RefZero\\RefZero.Core\\RefZero.Core.csproj",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2",
-        ".NETFramework,Version=v4.8",
-        "net6.0",
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
