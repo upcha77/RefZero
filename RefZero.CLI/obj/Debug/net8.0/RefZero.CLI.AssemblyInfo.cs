@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RefZero.CLI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af8868b81cae38ad3ff2e627d9ea9a41184a6cc3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73882e9c2c1cbf672e29d1947136f208f6245349")]
 [assembly: System.Reflection.AssemblyProductAttribute("RefZero.CLI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RefZero.CLI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
