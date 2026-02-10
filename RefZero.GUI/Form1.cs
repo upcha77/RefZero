@@ -14,11 +14,16 @@ namespace RefZero.GUI
             InitializeComponent();
         }
 
+        private bool IsSolution(string path)
+        {
+            return path.EndsWith(".sln", StringComparison.OrdinalIgnoreCase);
+        }
+
         private void btnBrowseProject_Click(object sender, EventArgs e)
         {
             using (var ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Project Files (*.csproj)|*.csproj";
+                ofd.Filter = "Project/Solution Files (*.csproj;*.sln)|*.csproj;*.sln|Project Files (*.csproj)|*.csproj|Solution Files (*.sln)|*.sln";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     txtProjectPath.Text = ofd.FileName;
@@ -28,28 +33,49 @@ namespace RefZero.GUI
 
         private void btnAnalyzeOnly_Click(object sender, EventArgs e)
         {
-            string projectPath = txtProjectPath.Text;
+            string path = txtProjectPath.Text;
 
-            if (string.IsNullOrEmpty(projectPath) || !File.Exists(projectPath))
+            if (string.IsNullOrEmpty(path) || !File.Exists(path))
             {
-                MessageBox.Show("Please select a valid project file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a valid project or solution file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            rtbLog.AppendText($"Starting analysis for {Path.GetFileName(projectPath)}...\n");
+            rtbLog.AppendText($"Starting analysis for {Path.GetFileName(path)}...\n");
             
             try
             {
-                var references = CliWrapper.Analyze(projectPath);
-                
-                rtbLog.AppendText($"Found {references.Count} references.\n");
-                
-                foreach(var refItem in references)
+                var projects = new List<string>();
+                if (IsSolution(path))
                 {
-                    rtbLog.AppendText($"[REF] {refItem.Name} ({refItem.Version}) -> {refItem.PhysicalPath} [{refItem.SourceType}]\n");
+                    projects = CliWrapper.GetProjectsInSolution(path);
+                    rtbLog.AppendText($"Solution contains {projects.Count} projects.\n");
+                }
+                else
+                {
+                    projects.Add(path);
+                }
+
+                foreach (var proj in projects)
+                {
+                    rtbLog.AppendText($"--- Analyzing Project: {Path.GetFileName(proj)} ---\n");
+                    try 
+                    {
+                        var references = CliWrapper.Analyze(proj);
+                        rtbLog.AppendText($"Found {references.Count} references.\n");
+                        foreach(var refItem in references)
+                        {
+                            rtbLog.AppendText($"[REF] {refItem.Name} ({refItem.Version}) -> {refItem.PhysicalPath} [{refItem.SourceType}]\n");
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        rtbLog.AppendText($"Failed to analyze {Path.GetFileName(proj)}: {ex.Message}\n");
+                    }
+                    rtbLog.AppendText("\n");
                 }
                 
-                rtbLog.AppendText("Analysis completed.\n");
+                rtbLog.AppendText("Analysis completed for all targets.\n");
             }
             catch (Exception ex)
             {
@@ -108,12 +134,12 @@ namespace RefZero.GUI
 
         private void btnCollect_Click(object sender, EventArgs e)
         {
-            string projectPath = txtProjectPath.Text;
+            string path = txtProjectPath.Text;
             string outputPath = txtOutputPath.Text;
 
-            if (string.IsNullOrEmpty(projectPath) || !File.Exists(projectPath))
+            if (string.IsNullOrEmpty(path) || !File.Exists(path))
             {
-                MessageBox.Show("Please select a valid project file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a valid project or solution file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -123,14 +149,37 @@ namespace RefZero.GUI
                 return;
             }
 
-            rtbLog.AppendText($"Starting collection for {projectPath}...\n");
+            rtbLog.AppendText($"Starting collection for {Path.GetFileName(path)}...\n");
             
             try
             {
-                // CliWrapper.Collect executes the CLI 'collect' command
-                CliWrapper.Collect(projectPath, outputPath);
+                var projects = new List<string>();
+                if (IsSolution(path))
+                {
+                    projects = CliWrapper.GetProjectsInSolution(path);
+                    rtbLog.AppendText($"Solution contains {projects.Count} projects.\n");
+                }
+                else
+                {
+                    projects.Add(path);
+                }
+
+                foreach (var proj in projects)
+                {
+                    rtbLog.AppendText($"--- Collecting: {Path.GetFileName(proj)} ---\n");
+                    try
+                    {
+                        // CliWrapper.Collect executes the CLI 'collect' command
+                        CliWrapper.Collect(proj, outputPath);
+                        rtbLog.AppendText($"Collection for {Path.GetFileName(proj)} completed.\n");
+                    }
+                    catch (Exception ex)
+                    {
+                        rtbLog.AppendText($"Failed to collect {Path.GetFileName(proj)}: {ex.Message}\n");
+                    }
+                }
                 
-                rtbLog.AppendText("Collection completed successfully.\n");
+                rtbLog.AppendText("All collections completed.\n");
                 MessageBox.Show("Collection completed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -161,11 +210,11 @@ namespace RefZero.GUI
 
         private void btnAnalyze_Click(object sender, EventArgs e)
         {
-            string projectPath = txtProjectPath.Text;
+            string path = txtProjectPath.Text;
 
-            if (string.IsNullOrEmpty(projectPath) || !File.Exists(projectPath))
+            if (string.IsNullOrEmpty(path) || !File.Exists(path))
             {
-                MessageBox.Show("Please select a valid project file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a valid project or solution file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -174,21 +223,51 @@ namespace RefZero.GUI
 
             try
             {
-                var unusedRefs = CliWrapper.RunCleanAnalysis(projectPath);
+                var projects = new List<string>();
+                if (IsSolution(path))
+                {
+                    projects = CliWrapper.GetProjectsInSolution(path);
+                }
+                else
+                {
+                    projects.Add(path);
+                }
 
-                if (unusedRefs.Count == 0)
+                int totalUnused = 0;
+                foreach (var proj in projects)
+                {
+                    try
+                    {
+                        var unusedRefs = CliWrapper.RunCleanAnalysis(proj);
+                        if (unusedRefs.Count > 0)
+                        {
+                            string projName = Path.GetFileName(proj);
+                            foreach (var item in unusedRefs)
+                            {
+                                // Store as "[ProjectName] ReferenceName" to identify source project
+                                // We might need full path to distinguish same-named projects, but usually filename is enough context 
+                                // or we can use a delimited string and just display differently.
+                                // For simplicity: "[ProjectFileName] ReferenceName"
+                                clbUnusedRefs.Items.Add($"[{projName}] {item}", true); // Default checked
+                            }
+                            totalUnused += unusedRefs.Count;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rtbLog.AppendText($"Clean analysis failed for {Path.GetFileName(proj)}: {ex.Message}\n");
+                    }
+                }
+
+                if (totalUnused == 0)
                 {
                     MessageBox.Show("No unused references found.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     lblStatus.Text = "No unused references found.";
                 }
                 else
                 {
-                    foreach (var item in unusedRefs)
-                    {
-                        clbUnusedRefs.Items.Add(item, true); // Default checked
-                    }
                     chkSelectAll.Checked = true;
-                    lblStatus.Text = $"Found {unusedRefs.Count} unused references.";
+                    lblStatus.Text = $"Found {totalUnused} unused references.";
                 }
             }
             catch (Exception ex)
@@ -206,15 +285,15 @@ namespace RefZero.GUI
                 return;
             }
 
-            string projectPath = txtProjectPath.Text;
-            if (string.IsNullOrEmpty(projectPath) || !File.Exists(projectPath))
+            string path = txtProjectPath.Text;
+            if (string.IsNullOrEmpty(path) || !File.Exists(path))
             {
-                MessageBox.Show("Please select a valid project file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a valid project or solution file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             var confirmResult = MessageBox.Show(
-                $"Are you sure you want to remove {clbUnusedRefs.CheckedItems.Count} references from the project file?",
+                $"Are you sure you want to remove {clbUnusedRefs.CheckedItems.Count} references?",
                 "Confirm Removal",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -223,14 +302,74 @@ namespace RefZero.GUI
             {
                 try
                 {
-                    var refsToRemove = clbUnusedRefs.CheckedItems.Cast<string>().ToList();
+                    // Group removals by project
+                    // Item format: "[ProjectFileName] ReferenceName"
+                    var removalMap = new Dictionary<string, List<string>>(); // ProjectName -> List<Ref>
                     
-                    CliWrapper.RemoveReferences(projectPath, refsToRemove);
+                    // Note: If single project analyze was run, format might be just "ReferenceName" IF we didn't change logic there.
+                    // BUT we changed logic above to always use projects list so even single project has "[Proj] Ref" format now?
+                    // Let's re-verify logic above.
+                    // Yes: even for single project, we add it to list and loop, so it gets "[Proj] " prefix.
+                    // Wait, earlier logic: projects.Add(path). So yes.
+                    
+                    // We need to map ProjectFileName back to full path if possible, or just assume unique filenames in solution?
+                    // The CliWrapper.GetProjectsInSolution returns full paths.
+                    // But we stored just FileName in the listbox.
+                    // We need to map back.
+                    
+                    var allProjects = new List<string>();
+                    if (IsSolution(path))
+                    {
+                        allProjects = CliWrapper.GetProjectsInSolution(path);
+                    }
+                    else
+                    {
+                        allProjects.Add(path);
+                    }
+                    
+                    // Map: FileName -> FullPath
+                    var projectFileMap = allProjects.ToDictionary(p => Path.GetFileName(p), p => p, StringComparer.OrdinalIgnoreCase);
+
+                    foreach (string item in clbUnusedRefs.CheckedItems)
+                    {
+                        int bracketEnd = item.IndexOf(']');
+                        if (bracketEnd > 1 && item.StartsWith("["))
+                        {
+                            string projName = item.Substring(1, bracketEnd - 1); // "ProjectFileName"
+                            string refName = item.Substring(bracketEnd + 1).Trim();
+                            
+                            if (projectFileMap.TryGetValue(projName, out string fullPath))
+                            {
+                                if (!removalMap.ContainsKey(fullPath))
+                                    removalMap[fullPath] = new List<string>();
+                                
+                                removalMap[fullPath].Add(refName);
+                            }
+                            else
+                            {
+                                // Should not happen if solution didn't change
+                                rtbLog.AppendText($"Warning: Could not find project path for {projName}\n");
+                            }
+                        }
+                        else
+                        {
+                            // Fallback for legacy format or error
+                             rtbLog.AppendText($"Warning: invalid item format {item}\n");
+                        }
+                    }
+
+                    foreach (var kvp in removalMap)
+                    {
+                        string projectFullPath = kvp.Key;
+                        List<string> refs = kvp.Value;
+                        
+                        CliWrapper.RemoveReferences(projectFullPath, refs);
+                        rtbLog.AppendText($"Removed {refs.Count} references from {Path.GetFileName(projectFullPath)}\n");
+                    }
 
                     MessageBox.Show("Selected references have been removed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     // Refresh GUI
-                    // We remove items from the list box that were checked and successfully removed
                     for (int i = clbUnusedRefs.Items.Count - 1; i >= 0; i--)
                     {
                         if (clbUnusedRefs.GetItemChecked(i))

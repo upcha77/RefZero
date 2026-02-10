@@ -136,5 +136,62 @@ namespace RefZero.GUI
                 return stdout;
             }
         }
+        public static List<string> GetProjectsInSolution(string slnPath)
+        {
+            var projectPaths = new List<string>();
+            var psi = new ProcessStartInfo
+            {
+                FileName = "dotnet",
+                Arguments = $"sln \"{slnPath}\" list",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            using (var proc = Process.Start(psi))
+            {
+                string output = proc.StandardOutput.ReadToEnd();
+                proc.WaitForExit();
+
+                if (proc.ExitCode != 0)
+                {
+                    throw new Exception($"Failed to list projects in solution.\nOutput: {output}");
+                }
+
+                // Output format is like:
+                // Project(s)
+                // ------------
+                // Path/To/Project.csproj
+                // ...
+
+                string[] lines = output.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                bool headerFound = false;
+                string slnDir = Path.GetDirectoryName(slnPath);
+
+                foreach (var line in lines)
+                {
+                    if (line.Trim().StartsWith("----"))
+                    {
+                        headerFound = true;
+                        continue;
+                    }
+
+                    if (headerFound)
+                    {
+                        string relativePath = line.Trim();
+                        if (!string.IsNullOrWhiteSpace(relativePath))
+                        {
+                            string fullPath = Path.GetFullPath(Path.Combine(slnDir, relativePath));
+                            if (File.Exists(fullPath) && fullPath.EndsWith(".csproj", StringComparison.OrdinalIgnoreCase))
+                            {
+                                projectPaths.Add(fullPath);
+                            }
+                        }
+                    }
+                }
+            }
+            return projectPaths;
+        }
     }
 }
