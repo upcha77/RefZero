@@ -15,9 +15,54 @@ namespace RefZero.CLI
             // Register MSBuild
             try
             {
-                var instances = MSBuildLocator.QueryVisualStudioInstances()
-                    .OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup) // Prefer VS
-                    .ThenByDescending(i => i.Version);
+                // Simple command line parsing to find project path early
+                string projectPath = null;
+                for (int i = 0; i < args.Length - 1; i++)
+                {
+                    if (args[i] == "-p" || args[i] == "--project")
+                    {
+                        projectPath = args[i + 1];
+                        break;
+                    }
+                }
+
+                // Heuristic: Check if project is .NET Core/5+ or Framework
+                bool preferDotNetSdk = false;
+                if (!string.IsNullOrEmpty(projectPath) && File.Exists(projectPath))
+                {
+                    try
+                    {
+                        string content = File.ReadAllText(projectPath);
+                        // Primitive check for SDK-style .NET Core/5+ targets
+                        if (content.Contains("<TargetFramework>netcoreapp") || 
+                            content.Contains("<TargetFramework>net5") || 
+                            content.Contains("<TargetFramework>net6") || 
+                            content.Contains("<TargetFramework>net7") || 
+                            content.Contains("<TargetFramework>net8"))
+                        {
+                            preferDotNetSdk = true;
+                        }
+                    }
+                    catch { /* Ignore read errors here */ }
+                }
+
+                var query = MSBuildLocator.QueryVisualStudioInstances();
+                IEnumerable<VisualStudioInstance> instances;
+
+                if (preferDotNetSdk)
+                {
+                    // Prefer DotNetSdk (for .NET Core/5+ compatibility)
+                    instances = query
+                        .OrderByDescending(i => i.DiscoveryType == DiscoveryType.DotNetSdk)
+                        .ThenByDescending(i => i.Version);
+                }
+                else
+                {
+                    // Prefer VisualStudio (for .NET Framework compatibility)
+                    instances = query
+                        .OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup)
+                        .ThenByDescending(i => i.Version);
+                }
                 
                 var instance = instances.FirstOrDefault();
 
@@ -128,15 +173,54 @@ namespace RefZero.CLI
             // 1. MSBuild Info
             try
             {
-                var instances = MSBuildLocator.QueryVisualStudioInstances()
-                    .OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup)
-                    .ThenByDescending(i => i.Version);
+                // Re-run heuristic logic simply to display it (code duplication for display purposes, or we could refactor)
+                // For now, let's just query all and show active.
+                // Actually, Main() selects the instance. Here we can just show what MSBuildLocator *thinks* is registered?
+                // MSBuildLocator doesn't expose "GetRegisteredInstance". 
+                // But since we registered one, loading it into process, we can check a type?
+                // A simpler way: The list we display here is just "Query". It doesn't tell us which one is *actually* used by the engine.
+                // However, since we registered the FIRST one from our sorted list in Main,
+                // we should replicate the sorting logic here to indicate which one is likely active.
 
-                Console.WriteLine($"\n[MSBuild Instances Found: {instances.Count()}]");
+                // Logic replication from Main:
+                string projectPath = projectFile.FullName;
+                bool preferDotNetSdk = false;
+                if (projectFile.Exists)
+                {
+                    try
+                    {
+                        string content = File.ReadAllText(projectPath);
+                        if (content.Contains("<TargetFramework>netcoreapp") || 
+                            content.Contains("<TargetFramework>net5") || 
+                            content.Contains("<TargetFramework>net6") || 
+                            content.Contains("<TargetFramework>net7") || 
+                            content.Contains("<TargetFramework>net8"))
+                        {
+                            preferDotNetSdk = true;
+                        }
+                    }
+                    catch {}
+                }
+
+                Console.WriteLine($"\n[Heuristic] Prefer SDK? {preferDotNetSdk} (Based on TargetFramework content)");
+                
+                var query = MSBuildLocator.QueryVisualStudioInstances();
+                IEnumerable<VisualStudioInstance> instances;
+
+                if (preferDotNetSdk)
+                {
+                    instances = query.OrderByDescending(i => i.DiscoveryType == DiscoveryType.DotNetSdk).ThenByDescending(i => i.Version);
+                }
+                else
+                {
+                    instances = query.OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup).ThenByDescending(i => i.Version);
+                }
+
+                Console.WriteLine($"[MSBuild Instances Found: {instances.Count()}]");
                 int index = 1;
                 foreach (var inst in instances)
                 {
-                    string activeMarker = (index == 1) ? " [ACTIVE]" : "";
+                    string activeMarker = (index == 1) ? " [ACTIVE (Selected)]" : "";
                     Console.WriteLine($"- Instance #{index++}{activeMarker}");
                     Console.WriteLine($"  Version: {inst.Version}");
                     Console.WriteLine($"  Path:    {inst.MSBuildPath}");
