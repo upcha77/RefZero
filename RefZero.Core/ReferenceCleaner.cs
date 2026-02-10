@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -105,32 +106,38 @@ namespace RefZero.Core
         {
             try
             {
-                // We need to load it as a new collection to avoid conflicts with previous loads
-                var collection = new Microsoft.Build.Evaluation.ProjectCollection();
-                var project = collection.LoadProject(projectPath);
+                var doc = XDocument.Load(projectPath);
+                var ns = doc.Root.GetDefaultNamespace(); 
 
-                var itemsToRemove = new List<Microsoft.Build.Evaluation.ProjectItem>();
-
+                bool changed = false;
                 foreach (var refName in referencesToRemove)
                 {
-                    // Find items with ItemType 'Reference' or 'PackageReference'
-                    var refs = project.GetItems("Reference").Where(i => i.EvaluatedInclude.StartsWith(refName, StringComparison.OrdinalIgnoreCase));
-                    var packageRefs = project.GetItems("PackageReference").Where(i => i.EvaluatedInclude.Equals(refName, StringComparison.OrdinalIgnoreCase));
+                    // Find Reference items (Include starts with refName)
+                    var refs = doc.Descendants(ns + "Reference")
+                                  .Where(e => e.Attribute("Include")?.Value.StartsWith(refName, StringComparison.OrdinalIgnoreCase) == true)
+                                  .ToList();
                     
-                    itemsToRemove.AddRange(refs);
-                    itemsToRemove.AddRange(packageRefs);
-                }
+                    // Find PackageReference items (Include equals refName)
+                    var packageRefs = doc.Descendants(ns + "PackageReference")
+                                         .Where(e => e.Attribute("Include")?.Value.Equals(refName, StringComparison.OrdinalIgnoreCase) == true)
+                                         .ToList();
 
-                if (itemsToRemove.Count > 0)
-                {
-                    foreach (var item in itemsToRemove)
-                    {
-                        project.RemoveItem(item);
+                    foreach (var r in refs) 
+                    { 
+                        r.Remove(); 
+                        changed = true; 
                     }
-                    project.Save();
+                    foreach (var p in packageRefs) 
+                    { 
+                        p.Remove(); 
+                        changed = true; 
+                    }
                 }
 
-                collection.UnloadProject(project);
+                if (changed)
+                {
+                    doc.Save(projectPath);
+                }
             }
             catch (Exception ex)
             {

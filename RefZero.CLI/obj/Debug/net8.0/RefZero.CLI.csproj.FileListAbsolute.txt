@@ -1,10 +1,9 @@
+C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.targets
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.exe
-C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.dll.config
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.deps.json
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.runtimeconfig.json
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.pdb
-C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\System.CommandLine.dll
@@ -50,8 +49,6 @@ C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.Core.dll
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\bin\Debug\net8.0\RefZero.Core.pdb
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\obj\Debug\net8.0\RefZero.CLI.csproj.AssemblyReference.cache
-C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\obj\Debug\net8.0\RefZero.CLI.csproj.SuggestedBindingRedirects.cache
-C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\obj\Debug\net8.0\RefZero.CLI.dll.config
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\obj\Debug\net8.0\RefZero.CLI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\obj\Debug\net8.0\RefZero.CLI.AssemblyInfoInputs.cache
 C:\Users\uprdp\.gemini\antigravity\scratch\RefZero\RefZero.CLI\obj\Debug\net8.0\RefZero.CLI.AssemblyInfo.cs

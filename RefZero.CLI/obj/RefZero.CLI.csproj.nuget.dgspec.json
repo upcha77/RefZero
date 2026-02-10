@@ -60,10 +60,6 @@
               "target": "Package",
               "version": "[17.2.0, )"
             },
-            "Microsoft.Build.Locator": {
-              "target": "Package",
-              "version": "[1.4.1, )"
-            },
             "System.CommandLine": {
               "target": "Package",
               "version": "[2.0.0-beta4.22272.1, )"
@@ -152,23 +148,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.Build": {
-              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "target": "Package",
-              "version": "[17.2.0, )"
-            },
-            "Microsoft.Build.Locator": {
-              "target": "Package",
-              "version": "[1.4.1, )"
-            },
-            "Microsoft.Build.Utilities.Core": {
-              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "target": "Package",
-              "version": "[17.2.0, )"
-            },
             "Microsoft.CodeAnalysis.CSharp": {
               "target": "Package",
               "version": "[4.2.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -206,23 +192,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.Build": {
-              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "target": "Package",
-              "version": "[17.2.0, )"
-            },
-            "Microsoft.Build.Locator": {
-              "target": "Package",
-              "version": "[1.4.1, )"
-            },
-            "Microsoft.Build.Utilities.Core": {
-              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "target": "Package",
-              "version": "[17.2.0, )"
-            },
             "Microsoft.CodeAnalysis.CSharp": {
               "target": "Package",
               "version": "[4.2.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -246,23 +222,13 @@
         "net472": {
           "targetAlias": "net472",
           "dependencies": {
-            "Microsoft.Build": {
-              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "target": "Package",
-              "version": "[17.2.0, )"
-            },
-            "Microsoft.Build.Locator": {
-              "target": "Package",
-              "version": "[1.4.1, )"
-            },
-            "Microsoft.Build.Utilities.Core": {
-              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "target": "Package",
-              "version": "[17.2.0, )"
-            },
             "Microsoft.CodeAnalysis.CSharp": {
               "target": "Package",
               "version": "[4.2.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\RuntimeIdentifierGraph.json"
@@ -270,23 +236,13 @@
         "net48": {
           "targetAlias": "net48",
           "dependencies": {
-            "Microsoft.Build": {
-              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "target": "Package",
-              "version": "[17.2.0, )"
-            },
-            "Microsoft.Build.Locator": {
-              "target": "Package",
-              "version": "[1.4.1, )"
-            },
-            "Microsoft.Build.Utilities.Core": {
-              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "target": "Package",
-              "version": "[17.2.0, )"
-            },
             "Microsoft.CodeAnalysis.CSharp": {
               "target": "Package",
               "version": "[4.2.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\RuntimeIdentifierGraph.json"

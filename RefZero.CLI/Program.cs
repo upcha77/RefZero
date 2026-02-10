@@ -2,9 +2,9 @@
 using System.IO;
 using System.CommandLine;
 using System.Linq;
-using RefZero.Core;
-using Microsoft.Build.Locator;
 using System.Collections.Generic;
+using System.Diagnostics;
+using RefZero.Core; // Still used for data models if any, or we can move ReferenceItem here.
 
 namespace RefZero.CLI
 {
@@ -12,395 +12,222 @@ namespace RefZero.CLI
     {
         static int Main(string[] args)
         {
-            // Register MSBuild
-            try
-            {
-                // Simple command line parsing to find project path early
-                string projectPath = null;
-                for (int i = 0; i < args.Length - 1; i++)
-                {
-                    if (args[i] == "-p" || args[i] == "--project")
-                    {
-                        projectPath = args[i + 1];
-                        break;
-                    }
-                }
-
-                // Heuristic: Check if project is SDK-style or Legacy
-                // SDK-style projects (Visual Studio 2017+) should use DotNetSdk MSBuild if possible.
-                // Legacy projects (verbose csproj) MUST use VisualStudio MSBuild.
-                bool isSdkStyle = false;
-                if (!string.IsNullOrEmpty(projectPath) && File.Exists(projectPath))
-                {
-                    try
-                    {
-                        // Quick text check. A full XML parse is safer but heavier.
-                        // SDK projects start with <Project Sdk="...">
-                        string content = File.ReadAllText(projectPath);
-                        if (content.Contains("Sdk=\"") || content.Contains("Sdk = \"")) 
-                        {
-                            isSdkStyle = true;
-                        }
-                    }
-                    catch { /* Ignore */ }
-                }
-
-                var query = MSBuildLocator.QueryVisualStudioInstances();
-                IEnumerable<VisualStudioInstance> instances;
-
-                if (isSdkStyle)
-                {
-                    // Prefer DotNetSdk for SDK-style projects (solves NETSDK1073)
-                    instances = query
-                        .OrderByDescending(i => i.DiscoveryType == DiscoveryType.DotNetSdk)
-                        .ThenByDescending(i => i.Version);
-                }
-                else
-                {
-                    // Prefer VisualStudio for legacy projects
-                    instances = query
-                        .OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup)
-                        .ThenByDescending(i => i.Version);
-                }
-                
-                var instance = instances.FirstOrDefault();
-
-                if (instance == null)
-                {
-                    Console.WriteLine("Error: No MSBuild instances found. Please install Visual Studio or Build Tools.");
-                    return 1;
-                }
-
-                // Console.WriteLine($"Using MSBuild at: {instance.MSBuildPath}");
-                MSBuildLocator.RegisterInstance(instance);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Failed to register MSBuild: {ex.Message}");
-                return 1;
-            }
-
-            // Define Commands
-            var rootCommand = new RootCommand("Ref-Zero: Reference Auditor and Collector");
-
-            var collectCommand = new Command("collect", "Collect all project references to a destination folder.");
+            // Root Command
+            var rootCommand = new RootCommand("Ref-Zero: Reference Auditor and Collector (Out-of-Process)");
 
             var projectOption = new Option<FileInfo>(
                 name: "--project",
                 description: "The path to the project file.")
             { IsRequired = true };
-
             projectOption.AddAlias("-p");
 
             var outputOption = new Option<DirectoryInfo>(
                 name: "--output",
                 description: "The directory to output the collected DLLs.")
             { IsRequired = true };
-
             outputOption.AddAlias("-o");
 
+            // Commands
+            var collectCommand = new Command("collect", "Collect all project references.");
             collectCommand.AddOption(projectOption);
             collectCommand.AddOption(outputOption);
-
-            collectCommand.SetHandler((FileInfo projectFile, DirectoryInfo outputDir) =>
-            {
-                CollectReferences(projectFile, outputDir);
-            }, projectOption, outputOption);
-
-            rootCommand.AddCommand(collectCommand);
+            collectCommand.SetHandler((FileInfo p, DirectoryInfo o) => CollectReferences(p, o), projectOption, outputOption);
 
             var analyzeCommand = new Command("analyze", "Analyze project references and output to JSON.");
             analyzeCommand.AddOption(projectOption);
-            
-            analyzeCommand.SetHandler((FileInfo projectFile) =>
-            {
-                AnalyzeReferences(projectFile);
-            }, projectOption);
+            analyzeCommand.SetHandler((FileInfo p) => AnalyzeReferences(p), projectOption);
 
-            rootCommand.AddCommand(analyzeCommand);
-
-            var cleanCommand = new Command("clean", "Identify and optionally remove unused references from a project.");
-            cleanCommand.AddOption(projectOption);
-            var dryRunOption = new Option<bool>("--dry-run", "Simulate the cleaning process without modifying files.");
-            cleanCommand.AddOption(dryRunOption);
-            var jsonOption = new Option<bool>("--json", "Output results in JSON format.");
-            cleanCommand.AddOption(jsonOption);
-
-            cleanCommand.SetHandler((FileInfo projectFile, bool dryRun, bool json) =>
-            {
-                CleanReferences(projectFile, dryRun, json);
-            }, projectOption, dryRunOption, jsonOption);
-
-            rootCommand.AddCommand(cleanCommand);
-
-            var removeCommand = new Command("remove", "Remove specific references from a project.");
-            removeCommand.AddOption(projectOption);
-            var refsOption = new Option<string[]>(
-                name: "--references",
-                description: "The list of references to remove.")
-            { IsRequired = true, AllowMultipleArgumentsPerToken = true };
-            refsOption.AddAlias("-r");
-            removeCommand.AddOption(refsOption);
-
-            removeCommand.SetHandler((FileInfo projectFile, string[] references) =>
-            {
-                RemoveSpecificReferences(projectFile, references);
-            }, projectOption, refsOption);
-
-            rootCommand.AddCommand(removeCommand);
-
-            var diagnosticsCommand = new Command("diagnostics", "Run system diagnostics to debug reference issues.");
+            var diagnosticsCommand = new Command("diagnostics", "Run system diagnostics.");
             diagnosticsCommand.AddOption(projectOption);
+            diagnosticsCommand.SetHandler((FileInfo p) => RunDiagnostics(p), projectOption);
 
-            diagnosticsCommand.SetHandler((FileInfo projectFile) =>
-            {
-                RunDiagnostics(projectFile);
-            }, projectOption);
-
+            rootCommand.AddCommand(collectCommand);
+            rootCommand.AddCommand(analyzeCommand);
             rootCommand.AddCommand(diagnosticsCommand);
 
             return rootCommand.Invoke(args);
         }
 
-        static void RunDiagnostics(FileInfo projectFile)
+        // --- Core Logic: Out-of-Process Analysis ---
+
+        private static List<ReferenceItem> ExecuteMSBuildAnalysis(FileInfo projectFile)
         {
-            Console.WriteLine("=== RefZero Diagnostics Mode ===");
-            Console.WriteLine($"Time: {DateTime.Now}");
-            Console.WriteLine($"OS: {Environment.OSVersion}");
-            Console.WriteLine($"CLI Path: {AppDomain.CurrentDomain.BaseDirectory}");
+            if (!projectFile.Exists) throw new FileNotFoundException("Project file not found", projectFile.FullName);
+
+            // 1. Prepare Targets File
+            string cliDir = AppDomain.CurrentDomain.BaseDirectory;
+            string targetsSource = Path.Combine(cliDir, "RefZero.targets");
+            if (!File.Exists(targetsSource))
+            {
+                throw new FileNotFoundException("RefZero.targets not found in CLI directory.", targetsSource);
+            }
+
+            // Create a wrapper project in the same directory as the target project
+            // to preserve relative paths.
+            string wrapperProject = Path.Combine(projectFile.DirectoryName, $"RefZeroWrapper_{Guid.NewGuid()}.proj");
             
-            // 1. MSBuild Info
             try
             {
-                // Re-run heuristic logic simply to display it (code duplication for display purposes, or we could refactor)
-                // For now, let's just query all and show active.
-                // Actually, Main() selects the instance. Here we can just show what MSBuildLocator *thinks* is registered?
-                // MSBuildLocator doesn't expose "GetRegisteredInstance". 
-                // But since we registered one, loading it into process, we can check a type?
-                // A simpler way: The list we display here is just "Query". It doesn't tell us which one is *actually* used by the engine.
-                // However, since we registered the FIRST one from our sorted list in Main,
-                // we should replicate the sorting logic here to indicate which one is likely active.
+                string wrapperContent = $@"<Project>
+  <Import Project=""{projectFile.Name}"" />
+  <Import Project=""{targetsSource}"" />
+</Project>";
+                File.WriteAllText(wrapperProject, wrapperContent);
 
-                // Logic replication from Main:
-                string projectPath = projectFile.FullName;
-                bool isSdkStyle = false;
-                if (projectFile.Exists)
+                // 2. Build MSBuild Command
+                // We build the wrapper project, targeting RefZeroDump
+                var psi = new ProcessStartInfo
                 {
-                    try
+                    FileName = "dotnet",
+                    Arguments = $"msbuild \"{wrapperProject}\" /t:RefZeroDump /nologo /v:m /m:1",
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                // 3. Execute
+                using (var proc = Process.Start(psi))
+                {
+                    string output = proc.StandardOutput.ReadToEnd();
+                    string error = proc.StandardError.ReadToEnd();
+                    proc.WaitForExit();
+
+                    if (proc.ExitCode != 0)
                     {
-                        string content = File.ReadAllText(projectPath);
-                        if (content.Contains("Sdk=\"") || content.Contains("Sdk = \"")) 
-                        {
-                            isSdkStyle = true;
-                        }
+                        throw new Exception($"MSBuild execution failed (Exit Code {proc.ExitCode}).\nError: {error}\nOutput: {output}");
                     }
-                    catch {}
-                }
 
-                Console.WriteLine($"\n[Heuristic] Is SDK Style? {isSdkStyle}");
-                
-                var query = MSBuildLocator.QueryVisualStudioInstances();
-                IEnumerable<VisualStudioInstance> instances;
-
-                if (isSdkStyle)
-                {
-                    instances = query.OrderByDescending(i => i.DiscoveryType == DiscoveryType.DotNetSdk).ThenByDescending(i => i.Version);
-                }
-                else
-                {
-                    instances = query.OrderByDescending(i => i.DiscoveryType == DiscoveryType.VisualStudioSetup).ThenByDescending(i => i.Version);
-                }
-
-                Console.WriteLine($"[MSBuild Instances Found: {instances.Count()}]");
-                int index = 1;
-                foreach (var inst in instances)
-                {
-                    string activeMarker = (index == 1) ? " [ACTIVE (Selected)]" : "";
-                    Console.WriteLine($"- Instance #{index++}{activeMarker}");
-                    Console.WriteLine($"  Version: {inst.Version}");
-                    Console.WriteLine($"  Path:    {inst.MSBuildPath}");
-                    Console.WriteLine($"  Type:    {inst.DiscoveryType}");
+                    // 4. Parse Output
+                    return ParseAnalysisOutput(output);
                 }
             }
-            catch (Exception ex)
+            finally
             {
-                Console.WriteLine($"Error querying MSBuild: {ex.Message}");
+                if (File.Exists(wrapperProject)) File.Delete(wrapperProject);
             }
-
-            // 2. Project Analysis (Verbose)
-            if (projectFile.Exists)
-            {
-                Console.WriteLine($"\n[Analyzing Project: {projectFile.Name}]");
-                try
-                {
-                    var analyzer = new DependencyAnalyzer();
-                    var projectInfo = analyzer.Analyze(projectFile.FullName);
-                    
-                    int count = projectInfo.References.Count();
-                    Console.WriteLine($"Reference Count: {count}");
-                    
-                    if (count == 0)
-                    {
-                        Console.WriteLine("WARNING: 0 references found. Possible causes:");
-                        Console.WriteLine("- Project not restored (try 'dotnet restore').");
-                        Console.WriteLine("- Target framework not installed on this machine.");
-                        Console.WriteLine("- MSBuild failed to resolve references silently.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("First 5 references detected:");
-                        foreach(var r in projectInfo.References.Take(5))
-                        {
-                            Console.WriteLine($"- {r.Name} ({r.SourceType})");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"CRITICAL ERROR during analysis:");
-                    Console.WriteLine(ex.ToString());
-                }
-            }
-            else
-            {
-                 Console.WriteLine($"\nProject file not found: {projectFile.FullName}");
-            }
-
-            Console.WriteLine("\n=== End Diagnostics ===");
         }
 
-        static void RemoveSpecificReferences(FileInfo projectFile, string[] references)
+        private static List<ReferenceItem> ParseAnalysisOutput(string output)
         {
-            if (!projectFile.Exists)
-            {
-                Console.WriteLine($"Error: Project file '{projectFile.FullName}' does not exist.");
-                return;
-            }
+            var lines = output.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var results = new List<ReferenceItem>();
+            bool capturing = false;
 
-            try
+            foreach (var rawLine in lines)
             {
-                Console.WriteLine($"Removing {references.Length} references from {projectFile.Name}...");
-                var cleaner = new ReferenceCleaner();
-                cleaner.RemoveReferences(projectFile.FullName, references);
-                Console.WriteLine("Removal completed.");
+                var line = rawLine.Trim();
+                if (line.Contains("REFZERO_START")) // Relaxed check
+                {
+                    capturing = true;
+                    continue;
+                }
+                if (line.Contains("REFZERO_END")) // Relaxed check
+                {
+                    capturing = false;
+                    // Don't break immediately, in case REFZERO_END is on the same line as an item
+                }
+
+                if (capturing && line.StartsWith("ITEM|"))
+                {
+                    var parts = line.Split('|');
+                    if (parts.Length >= 4)
+                    {
+                        results.Add(new ReferenceItem
+                        {
+                            SourceType = parts[1], // Binary or Project
+                            Name = parts[2],
+                            PhysicalPath = parts[3] // Mapped to PhysicalPath
+                        });
+                    }
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error removing references: {ex.Message}");
-            }
+            return results;
         }
+
+        // --- Command Handlers ---
 
         static void AnalyzeReferences(FileInfo projectFile)
         {
-            if (!projectFile.Exists)
-            {
-                Console.WriteLine($"Error: Project file '{projectFile.FullName}' does not exist.");
-                return;
-            }
-
             try
             {
-                var analyzer = new DependencyAnalyzer();
-                var projectInfo = analyzer.Analyze(projectFile.FullName);
-                
+                var references = ExecuteMSBuildAnalysis(projectFile);
                 var options = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
-                string json = System.Text.Json.JsonSerializer.Serialize(projectInfo.References, options);
+                string json = System.Text.Json.JsonSerializer.Serialize(references, options);
                 Console.WriteLine(json);
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Analysis Failed: {ex.Message}");
             }
         }
 
         static void CollectReferences(FileInfo projectFile, DirectoryInfo outputDir)
         {
-            if (!projectFile.Exists)
-            {
-                Console.WriteLine($"Error: Project file '{projectFile.FullName}' does not exist.");
-                return;
-            }
-
             try
             {
-                // Console.WriteLine($"Starting collection for: {projectFile.Name}"); // Suppress for cleaner output if needed, or keep.
-
-                var analyzer = new DependencyAnalyzer();
-                var projectInfo = analyzer.Analyze(projectFile.FullName);
+                var references = ExecuteMSBuildAnalysis(projectFile);
                 
-                // Console.WriteLine($"Found {projectInfo.References.Count()} references.");
+                if (!outputDir.Exists) outputDir.Create();
 
-                var copier = new ReferenceCopier();
-                copier.CopyReferences(projectInfo.References, outputDir.FullName);
-                
-                Console.WriteLine("Collection completed successfully.");
+                Console.WriteLine($"Collecting {references.Count} references to {outputDir.FullName}...");
+
+                foreach (var refItem in references)
+                {
+                    if (File.Exists(refItem.PhysicalPath))
+                    {
+                        string dest = Path.Combine(outputDir.FullName, Path.GetFileName(refItem.PhysicalPath));
+                        File.Copy(refItem.PhysicalPath, dest, true);
+                    }
+                }
+                Console.WriteLine("Collection completed.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-                Console.WriteLine(ex.StackTrace);
+                Console.Error.WriteLine($"Collection Failed: {ex.Message}");
             }
         }
 
-        static void CleanReferences(FileInfo projectFile, bool dryRun, bool json)
+        static void RunDiagnostics(FileInfo projectFile)
         {
-            if (!projectFile.Exists)
-            {
-                Console.WriteLine($"Error: Project file '{projectFile.FullName}' does not exist.");
-                return;
-            }
-
+            Console.WriteLine("=== RefZero Diagnostics (Out-of-Process) ===");
+            Console.WriteLine($"Checking 'dotnet' availability...");
+            
             try
             {
-                if (!json) Console.WriteLine($"Starting cleanup analysis for: {projectFile.Name}");
-
-                var analyzer = new DependencyAnalyzer();
-                var projectInfo = analyzer.Analyze(projectFile.FullName);
-                var allRefs = projectInfo.References;
-
-                if (!json) Console.WriteLine($"Total References: {allRefs.Count()}");
-
-                var cleaner = new ReferenceCleaner();
-                // We pass the project path to let cleaner find source files
-                var unusedRefs = cleaner.AnalyzeUnusedReferences(projectFile.FullName, allRefs);
-
-                if (json)
+                var psi = new ProcessStartInfo
                 {
-                    var options = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
-                    Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(unusedRefs, options));
-                    return;
-                }
+                    FileName = "dotnet",
+                    Arguments = "--version",
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false
+                };
+                var p = Process.Start(psi);
+                string v = p.StandardOutput.ReadToEnd();
+                p.WaitForExit();
+                Console.WriteLine($"dotnet version: {v.Trim()}");
+            }
+            catch 
+            {
+                Console.WriteLine("CRITICAL: 'dotnet' command not found in PATH.");
+            }
 
-                Console.WriteLine($"\n--- Unused References Analysis ---");
-                if (!unusedRefs.Any())
+            Console.WriteLine($"\n[Analyzing Project: {projectFile.Name}]");
+            try
+            {
+                var refs = ExecuteMSBuildAnalysis(projectFile);
+                Console.WriteLine($"Analysis Successful. Found {refs.Count} references.");
+                foreach(var r in refs.Take(5))
                 {
-                    Console.WriteLine("No unused references detected.");
-                }
-                else
-                {
-                    foreach (var unused in unusedRefs)
-                    {
-                        Console.WriteLine($"[Unused] {unused}");
-                    }
-                    Console.WriteLine($"Total Unused: {unusedRefs.Count()}");
-
-                    if (dryRun)
-                    {
-                        Console.WriteLine("\n[Dry Run] No files modified.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("\n[Action] Removing unused references from .csproj...");
-                        cleaner.RemoveReferences(projectFile.FullName, unusedRefs);
-                        Console.WriteLine("Cleanup completed.");
-                    }
+                    Console.WriteLine($"- {r.Name} ({r.SourceType}) -> {r.PhysicalPath}");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred during cleanup: {ex.Message}");
-                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine($"\nAnalysis FAILED:");
+                Console.WriteLine(ex.Message);
             }
+            Console.WriteLine("\n=== End Diagnostics ===");
         }
     }
 }

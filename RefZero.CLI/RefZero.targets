@@ -1,0 +1,16 @@
+<Project>
+  <Target Name="RefZeroDump" DependsOnTargets="ResolveAssemblyReferences;ResolveProjectReferences" AfterTargets="ResolveAssemblyReferences;ResolveProjectReferences">
+    <ItemGroup>
+      <_RefZeroItem Include="@(ReferencePath)">
+        <Type>Binary</Type>
+      </_RefZeroItem>
+      <_RefZeroItem Include="@(ProjectReference)">
+        <Type>Project</Type>
+      </_RefZeroItem>
+    </ItemGroup>
+
+    <Message Text="REFZERO_START" Importance="High" />
+    <Message Text="@(_RefZeroItem->'ITEM|%(Type)|%(Identity)|%(FullPath)', '%0A')" Importance="High" />
+    <Message Text="REFZERO_END" Importance="High" />
+  </Target>
+</Project>

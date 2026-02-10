@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Condition=" '$(TargetFramework)' == 'net472' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.build.locator\1.4.1\build\Microsoft.Build.Locator.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.build.locator\1.4.1\build\Microsoft.Build.Locator.targets')" />
+    <Import Project="$(NuGetPackageRoot)system.text.json\8.0.0\buildTransitive\net462\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\8.0.0\buildTransitive\net462\System.Text.Json.targets')" />
   </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net48' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.build.locator\1.4.1\build\Microsoft.Build.Locator.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.build.locator\1.4.1\build\Microsoft.Build.Locator.targets')" />
+    <Import Project="$(NuGetPackageRoot)system.text.json\8.0.0\buildTransitive\net462\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\8.0.0\buildTransitive\net462\System.Text.Json.targets')" />
   </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net6.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.build.locator\1.4.1\build\Microsoft.Build.Locator.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.build.locator\1.4.1\build\Microsoft.Build.Locator.targets')" />
+    <Import Project="$(NuGetPackageRoot)system.text.json\8.0.0\buildTransitive\net6.0\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\8.0.0\buildTransitive\net6.0\System.Text.Json.targets')" />
   </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net8.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.build.locator\1.4.1\build\Microsoft.Build.Locator.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.build.locator\1.4.1\build\Microsoft.Build.Locator.targets')" />
+    <Import Project="$(NuGetPackageRoot)system.text.json\8.0.0\buildTransitive\net6.0\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\8.0.0\buildTransitive\net6.0\System.Text.Json.targets')" />
   </ImportGroup>
 </Project>
