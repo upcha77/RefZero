@@ -4,6 +4,10 @@
     <PackageReference Include="System.Text.Json" Version="8.0.0" />
   </ItemGroup>
 
+  <Target Name="BuildCLI" BeforeTargets="BeforeBuild">
+    <Exec Command="dotnet build &quot;..\RefZero.CLI\RefZero.CLI.csproj&quot; -c $(Configuration)" />
+  </Target>
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
@@ -17,7 +21,7 @@
     <DisableLC>true</DisableLC>
   </PropertyGroup>
 
-  <Target Name="CopyCLI" AfterTargets="Build">
+  <Target Name="CopyCLI" AfterTargets="BuildCLI;Build">
     <ItemGroup>
       <CliFiles Include="..\RefZero.CLI\bin\Debug\net8.0\**\*.*" />
     </ItemGroup>
