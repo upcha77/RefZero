@@ -159,6 +159,7 @@ namespace RefZero.CLI
             catch (Exception ex)
             {
                 Console.Error.WriteLine($"Analysis Failed: {ex.Message}");
+                Environment.Exit(1);
             }
         }
 
@@ -185,6 +186,7 @@ namespace RefZero.CLI
             catch (Exception ex)
             {
                 Console.Error.WriteLine($"Collection Failed: {ex.Message}");
+                Environment.Exit(1);
             }
         }
 

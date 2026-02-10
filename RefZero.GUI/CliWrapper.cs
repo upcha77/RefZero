@@ -12,17 +12,21 @@ namespace RefZero.GUI
         // Try to find the CLI executable relative to the GUI, or in a known location
         private static string GetCliPath()
         {
-            // 1. Look for RefZero.CLI.exe in the same folder (Release/Publish scenario)
+            // 1. Look for RefZero.CLI.exe in "CLI" subdirectory (Deployment scenario)
+            string deployedExe = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CLI", "RefZero.CLI.exe");
+            if (File.Exists(deployedExe)) return deployedExe;
+
+            // 2. Look in the same folder (Fallback)
             string localExe = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RefZero.CLI.exe");
             if (File.Exists(localExe)) return localExe;
 
-            // 2. Development scenario: Look in the source build output
+            // 3. Development scenario: Look in the source build output
             // Assumes we are in RefZero.GUI\bin\Debug\net48
             // CLI is in RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.exe
             string devExe = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\RefZero.CLI\bin\Debug\net8.0\RefZero.CLI.exe"));
             if (File.Exists(devExe)) return devExe;
 
-            throw new FileNotFoundException("Could not find RefZero.CLI.exe", devExe);
+            throw new FileNotFoundException("Could not find RefZero.CLI.exe. Checked deployment folder 'CLI', local folder, and dev output.", deployedExe);
         }
 
         public static List<ReferenceItem> Analyze(string projectPath)

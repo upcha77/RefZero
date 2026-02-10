@@ -17,4 +17,11 @@
     <DisableLC>true</DisableLC>
   </PropertyGroup>
 
+  <Target Name="CopyCLI" AfterTargets="Build">
+    <ItemGroup>
+      <CliFiles Include="..\RefZero.CLI\bin\Debug\net8.0\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(CliFiles)" DestinationFolder="$(OutDir)\CLI\%(RecursiveDir)" />
+  </Target>
+
 </Project>
